@@ -1,7 +1,7 @@
 <footer class="footer">
 		<nav class="nav_disp_right_footer">
 			<ul class="lista_menu">
-				<li class="link" ><a href="idex.php" aria-label="Pagina de inicio">P&aacute;gina de Inicio</a>
+				<li class="link" ><a href="index.php" aria-label="Pagina de inicio">P&aacute;gina de Inicio</a>
 				</li>
 				<li class="link"><a href="creditos.php" aria-label="descripci&oacute;n del enlace">Creditos</a>
 				</li>

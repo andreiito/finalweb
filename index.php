@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
 <title>Tienda en linea/ DCA</title>
-<?php include "meta.php"; ?>
+	<?php include "meta.php" ?> 
 </head>
 <body>
-	<?php include "header.php"; ?>
-	<?php include once "conexión.php"; ?>
+	<?php include "header.php" ?>
+	<?php // include once "conexión.php" ?>
 	<div class="pagina">
 		<div class="fila">
 			<div class="carrusel">
@@ -41,6 +41,6 @@
 	</div><!--fin pagina-->
 
 
-	<?php include "footer.php"; ?>
+	<?php include "footer.php" ?>
 </body>
 </html>
