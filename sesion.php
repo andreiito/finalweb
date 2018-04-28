@@ -4,7 +4,9 @@
 	$usuario=$_POST['usuario'];
 	$pass=$_POST['password'];
 
-	$validacion = $pg_query($conexion, "select * FROM usuarios WHERE usuario='$usuario' AND contrasena='$pass'");
+	$validacion = $pg_query($conexion, "select * FROM usuarios WHERE usuario=".$usuario." AND contrasena=".$pass."");
+	$tipoUsuario = $pg_query($conexion, "select tipoU FROM usuarios WHERE usuario='$usuario' AND contrasena='$pass'");
+	echo $tipoUsuario;
 
 	if ($validacion){
 		$_SESSION['cliente']= $usuario;
