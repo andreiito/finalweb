@@ -1,0 +1,20 @@
+create user admintienda with encrypted password 'holamundo';
+create user ventatienda with encrypted password 'holamundo';
+create user clientetienda with encrypted password 'holamundo';
+create database tienda;
+alter database tienda owner to admintienda;
+\c tienda
+create table usuarios (id_usuario serial primary key,
+usuario varchar(20) not null,
+contrasena varchar (32) not null,
+tipoUsuario varchar(7) not null,
+nombre varchar(20) not null,
+apPaterno varchar(20) not null,
+apMaterno varchar(20) not null,
+correo varchar(35) not null,
+calle varchar(25) not null,
+ciudad varchar(20) not null,
+colonia varchar(20) not null,
+cp varchar(5) not null,
+num varchar(4) not null,
+int varchar(4) null );
