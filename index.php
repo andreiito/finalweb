@@ -6,7 +6,17 @@
 </head>
 <body>
 	<?php include "header.php" ?>
-	<?php // include once "conexión.php" ?>
+	<?php // include once "conexión.php" 
+	 	$session_start();
+
+	 	if(isset($_SESSION['cliente'])){
+	 		echo "Bienvenido";
+	 	}
+	 	else{
+	 	
+	 	}
+
+	?>
 	<div class="pagina">
 		<div class="fila">
 			<div class="carrusel">

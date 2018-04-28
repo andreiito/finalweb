@@ -10,7 +10,7 @@
 		<p>Por favor ingrese sus datos en el siguiente formulario.</p>
 		<br/> <br/>
 		<h2>Registro</h2>
-	<form action="menu.php" method="post">
+	<form action="sesion.php" method="post">
 	<label for="usuario">Usuario</label>
 	<input type="text" name="usuario" autocomplete="off">
 	<label for "password">Contraseña</label>
