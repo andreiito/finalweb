@@ -6,11 +6,12 @@
 </head>
 <body>
 	<?php include "header.php" ?>
-	<?php include once "conexión.php" ?>
+	<?php //include once "conexion.php" ?>
+	
 	<div class="pagina">
 		<form action="alta_usuario.php" method="post">
 				
-			<fieldset class="fieldset_form"> <legend class="legend_form"> Estilo de forms </legend> 
+			<fieldset class="fieldset_form"> <legend class="legend_form"> Registrarse a la p&aacute;gina </legend> 
 					
 				<!-- Nombre -->
 				<div class="form_grupo">

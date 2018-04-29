@@ -1,9 +1,15 @@
 create user admintienda with encrypted password 'holamundo';
+
 create user ventatienda with encrypted password 'holamundo';
+
 create user clientetienda with encrypted password 'holamundo';
+
 create database tienda;
+
 alter database tienda owner to admintienda;
+
 \c tienda
+
 create table usuarios (id_usuario serial primary key,
 usuario varchar(20) not null,
 contrasena varchar (32) not null,
@@ -18,3 +24,41 @@ colonia varchar(20) not null,
 cp varchar(5) not null,
 num varchar(4) not null,
 int varchar(4) null );
+
+grant select on usuarios to admintienda;
+
+alter table on usuarios to admintienda;
+
+\q
+
+psql -d tienda -U admintienda -h 127.0.0.1 //ingresar su contraseña
+
+create table articulos (id_articulo serial primary key,
+titulo varchar(30) not null,
+cantidad smallint not null,
+autor varchar(40) not null,
+precio float(7) not null,
+editorial varchar(20));
+
+create table carrito (id_carrito serial notnull,
+fk_id_usuario smallint not null references usuarios(id_usuario),
+fk_id_articulo smallint not null references articulos(id_articulo));
+
+create table carrito (id_carrito serial notnull,
+fecha date not null,
+fk_id_usuario smallint not null references usuarios(id_usuario),
+fk_id_articulo smallint not null references articulos(id_articulo));
+
+grant insert on articulos to ventatienda;
+
+grant select on articulos to ventatienda;
+
+grant select on articulos to clientetienda;
+
+grant insert on usuarios to ventatienda;
+
+grant insert on usuarios to clientetienda;
+
+grant select on usuarios to clientetienda;
+
+
