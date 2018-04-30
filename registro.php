@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php include "header.php" ?>
-	<?php //include once "conexion.php" ?>
+	<?php include  "conexion.php" ?>
 	
 	<div class="pagina">
 		<form action="alta_usuario.php" method="post">
@@ -49,7 +49,7 @@
 					<input type="password" class="form_control_grande" aria-label="Ingresa contraseña" id= "inputContrasena" name="usuario_pass" pattern="\S{6,12}" />
 				</div>
 
-				<input type="submit" class="button">Registrarse</input>
+		<input type="submit" class="button">Registrarse</input>
 			</fieldset>
 		</form>
 	
