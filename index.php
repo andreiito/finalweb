@@ -8,11 +8,11 @@
 	<?php include "header.php" ?>
 	<?php // include once "conexion.php" ?>
 	<?php 
-	 	//$session_start();
-
-	 	//if(isset($_SESSION['cliente'])){
-	 	//	echo "Bienvenido";
-	 	//}
+	 session_start();
+	 	if(isset($_SESSION['usuario'])){
+			
+	 	}
+			
 	 	//else{	}
 
 	?>
