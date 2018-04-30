@@ -1,21 +1,24 @@
 <?php 
-include once "conexion.php";
-	//session_start();
+include "conexion.php";
+	
 	$usuario=$_POST['usuario'];
-$pass=$_POST['password'];
-echo $usuario;
+	$pass=$_POST['password'];
+	echo $usuario;
 
-	$validacion = $pg_query($conexion, "select * FROM usuarios WHERE usuario=".$usuario." AND contrasena=".$pass."");
-	$tipoUsuario = $pg_query($conexion, "select tipoU FROM usuarios WHERE usuario='$usuario' AND contrasena='$pass'");
+	$validacion = $pg_query($conexion, "select * FROM usuarios WHERE 'usuario'=".$usuario." AND 'contrasena'=".$pass."'");
+	$tipoUsuario = $pg_query($conexion, "select tipoUsuario FROM usuarios WHERE 'usuario'='".$usuario."' AND 'contrasena'='".$pass."'");
 	echo $tipoUsuario;
 
 	if ($validacion){
+		session_start();
 		$_SESSION['cliente']= $usuario;
-	//	header("Location: index.php")
+		header("Location: https//www.final.unam.mx/index.php");
 		echo "Bienvenido ".$usuario;
 	}
 	else{
-	//	header("Location: login.php");
-		echo "Su usuario o contraseña está incorrecto";
-	}*/
+		header("Location: https//www.final.unam.mx/login.php");
+		echo "<p>Su usuario o contraseña es incorrecto</p>";
+	}
+
+
 	?>

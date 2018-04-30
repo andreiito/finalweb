@@ -8,12 +8,12 @@
 			
 			<ul class="lista_menu">
 			<!--Todos los usuarios-->
-				<li  class="link"><a  href="login.php" aria-label="Iniciar Sesi&oacute;n">Iniciar sesión</a></li>
+				<li  class="link"><a  href="login.php" aria-label="Iniciar Sesi&oacute;n">Iniciar sesi&oacute;n</a></li>
 
-				<li class="link"><a href="cerrar_sesion.php" aria-label="Salir de la sesi&oacute;n">Cerrar Sesión</a></li>
+				<li class="link"><a href="cerrar_sesion.php" aria-label="Salir de la sesi&oacute;n">Cerrar Sesi&oacute;n</a></li>
 			<!--Cliente
-				<li class="link"><a href="" aria-label="Cancelar mi suscripción">Dar de baja mi cuenta</a></li>-->
-				<li class="link"><a href="carrito.php" aria-label="Ir a mi carrito">Carrito</a></li>
+				<li class="link"><a href="" aria-label="Cancelar mi suscripción">Dar de baja mi cuenta</a></li>
+				<li class="link"><a href="carrito.php" aria-label="Ir a mi carrito">Carrito</a></li>-->
 				<li class="link"><a href="registro.php" aria-label="Registrarse en la p&aacute;gina">Registrarse</a></li>
 			<!--Administrador
 				<li class="link"><a href="" aria-label="Dar de alta Administrador">Agregar Usuario Administrador</a></li>

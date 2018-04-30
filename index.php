@@ -6,15 +6,14 @@
 </head>
 <body>
 	<?php include "header.php" ?>
-	<?php // include once "conexion.php" 
-	 	$session_start();
+	<?php // include once "conexion.php" ?>
+	<?php 
+	 	//$session_start();
 
-	 	if(isset($_SESSION['cliente'])){
-	 		echo "Bienvenido";
-	 	}
-	 	else{
-	 	
-	 	}
+	 	//if(isset($_SESSION['cliente'])){
+	 	//	echo "Bienvenido";
+	 	//}
+	 	//else{	}
 
 	?>
 	<div class="pagina">
