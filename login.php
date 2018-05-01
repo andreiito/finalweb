@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Inicio de sesiòn</title>
+		<title>Inicio de sesi&oacute;n</title>
 	<?php include "meta.php" ?>
 	</head>
 	<body>
 	<?php include "header.php" ?>
-		<h1>Inicio de Sesiòn</h1>
+		<h1>Inicio de Sesi&oacute;n</h1>
 		<p>Por favor ingrese sus datos en el siguiente formulario.</p>
 		<br/> <br/>
 		<h2>Registro</h2>

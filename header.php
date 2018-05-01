@@ -8,23 +8,37 @@
 			
 			<ul class="lista_menu">
 			<!--Todos los usuarios-->
-				<li  class="link"><a  href="login.php" aria-label="Iniciar Sesi&oacute;n">Iniciar sesi&oacute;n</a></li>
+			<?php session_start(); 
+				if(is_null($_SESSION['usuario'])){
+					echo "<li  class=\"link\"><a  href=\"login.php\" aria-label=\"Iniciar Sesi&oacute;n\">Iniciar sesi&oacute;n</a></li>";
+					echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Registrarse en la p&aacute;gina\">Registrarse</a></li>";
+				}
+			//Cliente
 
-				<li class="link"><a href="cerrar_sesion.php" aria-label="Salir de la sesi&oacute;n">Cerrar Sesi&oacute;n</a></li>
-			<!--Cliente
-				<li class="link"><a href="" aria-label="Cancelar mi suscripción">Dar de baja mi cuenta</a></li>
-				<li class="link"><a href="carrito.php" aria-label="Ir a mi carrito">Carrito</a></li>-->
-				<li class="link"><a href="registro.php" aria-label="Registrarse en la p&aacute;gina">Registrarse</a></li>
-			<!--Administrador
-				<li class="link"><a href="" aria-label="Dar de alta Administrador">Agregar Usuario Administrador</a></li>
-				<li class="link"><a href="" aria-label="Dar de Alta usuario en ventas">Agregar Usuario de Ventas</a></li>
-				<li class="link"><a href="" aria-label="Dar de baja Administrador">Eliminar Usuario Administrador</a></li>
-				<li class="link"><a href="" aria-label="Dar de baja usuario en ventas">Eliminar Usuario de Ventas</a></li>
-			Ventas	
-				<li class="link"><a href="" aria-label="Dar de Alta art&iacute;culo">Agregar Art&iacute;culos</a></li>
-				<li class="link"><a href="" aria-label="Dar de baja art&iacute;culo">Eliminar Art&iacute;culos</a></li>
-				<li class="link"><a href="" aria-label="Editar art&iacute;culo">Modificar Art&iacute;culos</a></li>
--->
+				if(isset($_SESSION['usuario'])){
+								
+					echo "<li class=\"link\"><a href=\"carrito.php\" aria-label=\"Ir a mi carrito\">Carrito</a></li>";
+					echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Cancelar mi suscripción\">Dar de baja mi cuenta</a></li>";
+					echo "<li class=\"link\"><a href=\"cerrar_sesion.php\" aria-label=\"Salir de la sesi&oacute;n\">Cerrar Sesi&oacute;n</a></li>";
+
+					if($_SESSION['tipo']=='venta'){
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
+					}
+					if($_SESSION['tipo']=='admin'){
+						//Clientes
+						echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Dar de alta a Usuario\">Agregar Usuario Administrador</a></li>";
+						echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Dar de baja a Usuario\">Eliminar Usuario Administrador</a></li>";
+						//Articulos
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
+
+					}
+	 	}
+	 	?>
+				
 			</ul>
 		</nav>
 	</header>

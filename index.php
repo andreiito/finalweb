@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Tienda en linea/ DCA</title>
+<title>Tienda en linea/ P&aacue;gina Principal</title>
 	<?php include "meta.php" ?> 
 </head>
 <body>
-	<?php include "header.php" ?>
 	<?php // include once "conexion.php" ?>
-	<?php 
-	 session_start();
-	 	if(isset($_SESSION['usuario'])){
-			
-	 	}
-			
-	 	//else{	}
-
-	?>
+	<?php include "header.php" ?>
 	<div class="pagina">
 		<div class="fila">
 			<div class="carrusel">
