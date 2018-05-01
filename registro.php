@@ -72,15 +72,15 @@
 					<input type="text" class="form_control_grande" aria-label="input de Texto" id="inputText" name="usuario" placeholder="texto" />  
 				</div>
 				<?php 
-				if($_SESSION['tipo']=='admin')
+				if($_SESSION['tipo']=='admin'){
 					echo "<div class=\"form_grupo\">";
-						echo "<label class=\"form_label\" for=\"select\">Select</label>"; 
+						echo "<label class=\"form_label\" for=\"select\">Tipo de usuario</label>"; 
 					echo "<select class=\"form_control_chico\" id=\"select\" name=\"tipo\">";
 					  echo "<option value=\"cliente\">Cliente</option>";
 					  echo "<option value=\"venta\">Ventas</option>";
 					  echo "<option value=\"admin\">Administrador</option>";
 					echo "</select>";  
-					echo "</div>";
+					echo "</div>";}
 
 				?>
 				

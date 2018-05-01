@@ -1,10 +1,11 @@
 <?php 
-include "conexion.php";
-	
+
+	session_start();
 	$usuario=$_POST['usuario'];
 	$pass=$_POST['password'];
 
 	$sqlval = "select * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$pass."'";
+	include "conexion.php";
 	$valUP = consulta($sqlval);
 	if ($valUP){	
 		$tipoUsuario = "select tipousuario FROM usuarios WHERE usuario='".$usuario."';";
@@ -12,11 +13,10 @@ include "conexion.php";
 		$us= $tUs[0]['tipousuario'];
 		
 
-		session_start();
+	
 		$_SESSION['tipo']= $us;
 		$_SESSION['usuario']= $usuario;
 
-		var_dump ($_SESSION);
 		header("Location: index.php");
 		
 	}

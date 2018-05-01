@@ -14,7 +14,7 @@
 			<a href="index.php">Regresar</a></br>
 			<?php
 				if($_SESSION['tipo']=='admin'){
-					<!-- Nombre de usuario -->
+					// Nombre de usuario
 					echo "<div class=\"form_grupo\">";
 						echo "<label class=\"form_label\" for=\"inputText\"> Nombre de Usuario </label>";
 						echo "<input type=\"text\" class=\"form_control_grande\" aria-label=\"input de Texto\" id=\"inputText\" name=\"usuario\" />";  

@@ -64,3 +64,5 @@ grant select on usuarios to clientetienda;
 grant usage on usuarios_id_usuario_seq to clientetienda;
 
 grant usage on articulos_id_articulo_seq to clientetienda;
+
+grant delete on usuarios to clientetienda;

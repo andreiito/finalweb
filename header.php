@@ -9,7 +9,7 @@
 			<ul class="lista_menu">
 			<!--Todos los usuarios-->
 			<?php session_start(); 
-				if(is_null($_SESSION['usuario'])){
+				if(!$_SESSION['usuario']){
 					echo "<li  class=\"link\"><a  href=\"login.php\" aria-label=\"Iniciar Sesi&oacute;n\">Iniciar sesi&oacute;n</a></li>";
 					echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Registrarse en la p&aacute;gina\">Registrarse</a></li>";
 				}
@@ -28,8 +28,8 @@
 					}
 					if($_SESSION['tipo']=='admin'){
 						//Clientes
-						echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Dar de alta a Usuario\">Agregar Usuario Administrador</a></li>";
-						echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Dar de baja a Usuario\">Eliminar Usuario Administrador</a></li>";
+						echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Dar de alta a Usuario\">Agregar Usuario</a></li>";
+						echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Dar de baja a Usuario\">Eliminar Usuario </a></li>";
 						//Articulos
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";

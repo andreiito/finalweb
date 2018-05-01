@@ -1,6 +1,7 @@
-<?php include  "conexion.php" ?>
-<?php 
-if(is_null($_SESSION['usuario'])){
+<?php
+session_start();
+include "conexion.php";
+if(!$_SESSION['usuario']){
 	$usuario = $_POST['usuario']; 
 	$contrasena = $_POST['pass'];
 	$tipoUsuario = "cliente";
@@ -31,6 +32,7 @@ if(is_null($_SESSION['usuario'])){
 	}
 }
 if($_SESSION['tipo']=='admin'){
+		
 	$usuario = $_POST['usuario']; 
 	$contrasena = $_POST['pass'];
 	$tipoUsuario = $_POST['tipo'];
@@ -49,7 +51,7 @@ if($_SESSION['tipo']=='admin'){
 	$filtro_usuarios=consulta($sqlusuarios);
 	if ($filtro_usuarios){
 		header("Location: registro.php");
-		echo "<p>El nombre de Usuario ya está ocupado, por favor introduzca otro</p>";
+		//echo "<p>El nombre de Usuario ya está ocupado, por favor introduzca otro</p>";
 	}
 	else{
 		$alta = "insert into usuarios (usuario, contrasena, tipousuario, nombre, apPaterno, apMaterno, correo, calle, ciudad, colonia, cp, num, int) values ('".$usuario."','".$contrasena."','".$tipoUsuario."','".$nombre."','".$apPaterno."','".$apMaterno."','".$correo."','".$calle."','".$ciudad."','".$colonia."','".$cp."','".$num."','".$int."')";	
