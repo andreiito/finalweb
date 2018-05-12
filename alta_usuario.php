@@ -4,7 +4,7 @@ include "conexion.php";
 if(!$_SESSION['usuario']){
 	$usuario = $_POST['usuario']; 
 	$contrasena = $_POST['pass'];
-	$tipoUsuario = "cliente";
+	$tipoUsuario = 3;
 	$nombre = $_POST['nombre'];
 	$apPaterno = $_POST['apat'];
 	$apMaterno = $_POST['apmat'];
@@ -12,6 +12,7 @@ if(!$_SESSION['usuario']){
 	$calle = $_POST['calle'];
 	$ciudad = $_POST['ciudad'];
 	$colonia = $_POST['colonia'];
+	$del=$_POST['del'];
 	$cp = $_POST['cp'];
 	$num = $_POST['num'];
 	$int = $_POST['int'];
@@ -23,8 +24,11 @@ if(!$_SESSION['usuario']){
 		echo "<p>Su nombre de Usuario ya está ocupado, por favor introduzca otro</p>";
 	}
 	else{
-		$alta = "insert into usuarios (usuario, contrasena, tipousuario, nombre, apPaterno, apMaterno, correo, calle, ciudad, colonia, cp, num, int) values ('".$usuario."','".$contrasena."','".$tipoUsuario."','".$nombre."','".$apPaterno."','".$apMaterno."','".$correo."','".$calle."','".$ciudad."','".$colonia."','".$cp."','".$num."','".$int."')";	
-	$altausuario=consulta($alta);
+		$alta = "insert into usuarios (nombre, appaterno, apmaterno, telefono, correo, usuario, contrasena, id_tipo) values ('".$nombre."','".$apPaterno."','".$apMaterno."','".$tel."','".$correo."','".$usuario."','".$contrasena."','".$tipoUsuario."')";	
+		$altausuario=consulta($alta);
+		$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
+		$idUs = consulta($selUs);
+		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','"$numero."','".$int."','"$colonia."', '".$del."','".$cp."',".$idUs.");";
 		
 		if($altausuario){
 		header("Location: index.php");
@@ -43,6 +47,7 @@ if($_SESSION['tipo']=='admin'){
 	$calle = $_POST['calle'];
 	$ciudad = $_POST['ciudad'];
 	$colonia = $_POST['colonia'];
+	$del=$_POST['del'];
 	$cp = $_POST['cp'];
 	$num = $_POST['num'];
 	$int = $_POST['int'];

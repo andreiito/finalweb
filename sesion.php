@@ -8,12 +8,10 @@
 	include "conexion.php";
 	$valUP = consulta($sqlval);
 	if ($valUP){	
-		$tipoUsuario = "select tipousuario FROM usuarios WHERE usuario='".$usuario."';";
+		$tipoUsuario = "select tipo FROM tipousurio inner join usuarios on tipousuario.id_tipo = usuarios.id_tipo and usuarios.usuario='".$usuario."';";
 		$tUs= consulta($tipoUsuario);
 		$us= $tUs[0]['tipousuario'];
 		
-
-	
 		$_SESSION['tipo']= $us;
 		$_SESSION['usuario']= $usuario;
 

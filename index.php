@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Tienda en linea/ P&aacue;gina Principal</title>
+<title>Tienda en linea/ P&aacute;gina Principal</title>
 	<?php include "meta.php" ?> 
 </head>
 <body>

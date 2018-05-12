@@ -12,10 +12,14 @@ if($_SESSION['tipo']=='admin'){
 
 if($_SESSION['tipo']=='cliente'){
 	$sqlbaja="delete from usuarios WHERE usuario = '".$_SESSION['usuario']."';";
-$baja_usuarios=consulta($sqlbaja);
+	$baja_usuarios=consulta($sqlbaja);
+
 	if ($baja_usuarios){
 		session_destroy();
-		header("Location: index.php");
+		header ("location: index.php");
 	}
+	session_destroy();
+	header ("location: index.php");
+
 }
 ?>

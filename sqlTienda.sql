@@ -50,7 +50,7 @@ create table descuento (
 id_descuento serial not null,
 descuento smallint not null,
 
-PRIMARY KEY (id_descuento),
+PRIMARY KEY (id_descuento)
 );
 
 create table autores (
