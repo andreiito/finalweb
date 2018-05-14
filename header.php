@@ -22,7 +22,7 @@
 					echo "<li class=\"link\"><a href=\"cerrar_sesion.php\" aria-label=\"Salir de la sesi&oacute;n\">Cerrar Sesi&oacute;n</a></li>";
 
 					if($_SESSION['tipo']=='venta'){
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"registro_articulos.php\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
 					}

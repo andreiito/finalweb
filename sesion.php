@@ -10,12 +10,12 @@
 	if ($valUP){	
 		$tipoUsuario = "select tipo FROM tipousurio inner join usuarios on tipousuario.id_tipo = usuarios.id_tipo and usuarios.usuario='".$usuario."';";
 		$tUs= consulta($tipoUsuario);
-		$us= $tUs[0]['tipousuario'];
+		$us= $tUs[0]['tipo'];
 		
 		$_SESSION['tipo']= $us;
 		$_SESSION['usuario']= $usuario;
 
-		header("Location: index.php");
+		header("Location: s.php");
 		
 	}
 	else{

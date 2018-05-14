@@ -1,0 +1,1348 @@
+*{
+	box-sizing:border-box;
+    font-size: 14px;
+    color: #000;
+}
+
+/*estilo para que los enlaces no tengan subrayado */  
+a{
+    
+    text-decoration: none;
+}
+.footer{
+    width: 100%;
+    align-self: flex-end;
+    padding-top: 8px;
+    position: relative;
+    border: solid 2px black;
+}
+
+.footer> nav{
+    position: relative; 
+}
+.footer::after{
+    content: "";
+    clear: both;
+    position: relative;
+    display: block;
+}
+.nav::after{
+    content: "";
+    clear: both;
+    position: relative;
+    display: block;
+}
+@media only screen and (max-width: 768px) { 
+    /*----------Display para menú en float right 20% witdth--------*/
+    .nav_disp_right_footer > .lista_menu> .link {
+        display: none;
+        clear: both;
+        float: right;
+        width: 100%;
+    }
+}
+.container{ 
+    width: 100%;
+    margin: auto;
+}
+.pagina{
+    
+    margin: auto;
+}
+.fila:after, .fila:before{
+	content: "";
+	display: block;
+	clear: both;
+	}
+	
+.fila{
+        word-wrap:  break-word;    
+    }
+a:focus, a:hover {
+    color: #ff0000;
+    outline: #ff0000 dotted 3px;
+    text-decoration: underline;
+    padding: 2px;
+}
+
+
+.boton:focus, .boton:hover {        
+    outline: #ff0000 dotted 3px;    
+    text-decoration: underline;
+
+    }
+
+
+/*Definición de clases para botones y colores de estilos de ayuda Alx*/
+
+.boton{
+    padding: .3rem .7rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .26rem;
+    letter-spacing: .03rem;
+    font-size: 1.07rem; 
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+/*fin de clases especiales para ayuda de texto*/
+.section{
+	background-color: #FFED37;
+}
+.family{
+	background-color: #E0E980;
+}
+
+/*carrusel*/
+
+.contenido_carrusel{
+	display:block;
+}
+.contenido_carrusel.oculto{
+	display:none;
+}
+
+.contenido_carrusel_imagen{
+	display:block;
+}
+.contenido_carrusel_imagen.oculto{
+	display:none;
+}
+.imagen_carrusel{
+	width:100%;
+}
+/*paginacion carrusel*/
+
+.paginacion_carrusel {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.paginacion_carrusel > li {
+  display: inline-block;
+}
+.paginacion_carrusel > li > a{
+  border: 1px solid #1739A9;
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 0.9;
+  color: #000;
+  text-decoration: none;
+  background-color: #a5e6ff;  
+}
+
+.paginacion_carrusel > li:first-child > a {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.paginacion_carrusel > li:last-child > a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.paginacion_carrusel > li > a:hover,
+.paginacion > li > a:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #65d3ff;
+  border-color: #1739A9;
+}
+.paginacion_carrusel > .activo > a,
+.paginacion_carrusel > .activo > a:hover,
+.paginacion_carrusel > .activo > a:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.paginacion_carrusel > .inactivo > a,
+.paginacion_carrusel > .inactivo > a:hover,
+.paginacion_carrusel > .inactivo > a:focus {
+  color: #000;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #337ab7;
+}
+
+/*fin paginacion carrusel*/
+
+/*Fin Carrusel*/
+h1{
+		font-size:40px;
+	}
+	h2{
+		font-size:35px;
+	}
+	h3{
+		font-size:27px;
+	}
+	h4{
+		font-size:22px;
+	}
+	h5{
+		font-size:18px;
+	}
+	h6{
+		font-size:16px;
+	}
+
+
+	p{
+		border-radius: .26rem;
+		letter-spacing: .03rem;
+		font-size: 14px;
+		margin:1em;
+		padding:.5em;
+	}
+	/*Alineación de párrafos*/
+.alinear_izquierda{
+	text-align: left;
+}
+.alinear_justificado{
+	text-align: justify;
+}
+.alinear_derecha{
+	text-align: right;
+}
+.alinear_centro{
+	text-align: center;
+}
+
+
+.nav{
+    /*Esta es la clase para que no se quede estatico*/
+    left:0; 
+    top: 0;
+    width:100%;
+    height: 50px;
+    border-bottom: solid 2px;
+    background-color: #fff; 
+    margin-bottom: 30px;
+}
+.nav_static{
+    /*Esta clase hace que el navtab se quede estatico*/
+    left:0; 
+    top: 0;
+    width:100%;
+    height: 50px;
+    position:fixed;
+    border-bottom: solid 2px;
+    background-color: #fff;
+}
+
+nav > .lista_menu{
+    /*Quita todos los estilos de lista*/
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    float: right;  
+}
+.boton_hamburguesa{/*Esta es la clase para el botón, se combina con las clases
+ b_l es para alinear el boton a la izquierda
+ b_r es para alinear el boton a la derecha*/
+    display: none;
+}
+
+.boton_hamburguesa:focus, .boton_hamburguesa:hover{  /*Selección del hamburguesa*/      
+    outline: #ff0000 dotted 3px;    
+    text-decoration: underline;
+    }
+.nav_logo:focus, .nav_logo:hover{
+     outline: #ff0000 dotted 3px;
+     padding: 0;    
+} 
+
+.lista_menu > .link{
+    /*da formatos a los elementos de las listas*/
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+
+}
+
+.lista_menu::after{
+    content: "";
+    clear: both;
+    position: relative;
+    display: block;
+}
+.nav_logo{
+    margin: 3px;
+    height: auto;
+    display: inline-block;
+    float: left;
+}
+.img_logo{
+    height: 40px;
+    display: inline-block;
+    float: left;
+}
+/*----------------------NAVTAB CON PANTALLAS MENORES A 768px-------*/
+@media only screen and (max-width: 768px) { 
+/*-----------GLOSARIO DE CLASES----------
+.nav_disp_b: Despliega el menú en block, ocupan el 100% de la pagina
+.link: enlaces principales, se muestran primero
+.sublink: enlaces secundarios, se muestran despues de los principales 
+.nav_disp_r: Despliega el menú en float right, ocupan el 20% de la pagina
+.nav_disp_l: Despliega el menú en float left, ocupan el 20% de la pagina
+.b_l: coloca el menú que despliega el menú a la izquierda
+.b_r: coloca el menú que despliega el menú a la derecha
+.in-a: sirve como ayuda para restricción de que se muestre en el JQUERY;
+*/
+nav > .lista_menu{
+    /*Quita todos los estilos de lista*/
+    float: none;  
+}
+.nav_logo{
+    float: none;
+}
+/*----------Display para menú en block 100% witdth--------*/
+    .nav_disp_block > .lista_menu> .link{
+        /*Oculta todos los elementos del navtab menos el boton*/
+        display: none;
+        clear: both;
+        width: 100%;
+        border-bottom:solid 1px;
+        background-color: #fff;
+   }
+/*----------Display para menú en float right 20% witdth--------*/
+    .nav_disp_right > .lista_menu> .link {
+        display: none;
+        clear: both;
+        float: right;
+        width: 60%;
+        background-color: #fff;
+        border-bottom:solid 1px;
+    }
+/*----------Display para menú en float left 20% witdth--------*/
+    .nav_disp_left > .lista_menu> .link {
+        display: none;
+        clear: both;
+        float: left;
+        width: 60%;
+        border-bottom:solid 1px;
+        background-color: #fff;
+    }
+/*----------Boton para desplegar el menú--------*/
+    .boton_hamburguesa{
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        text-decoration: none;  
+        clear: both;
+        width: auto;
+        height: 100%;
+        padding: 10px 0 16px 0;
+        margin: 0;
+        margin-right: 10px;
+    }
+    .hamburguesa_izquierda{float: left;}/*coloca el boton a la izquierda*/
+    .hamburguesa_derecha{float: right;}/*coloca el boton a la derecha*/
+
+    .icono_boton{/*Contenido del boton, hamburguesa*/
+        background-color: #000;
+        display: block;
+        width: 30px;
+        height: 2px;
+        border-radius: 1px;
+        margin: 6px;
+    }
+}
+/*-----------TERMINA SECCIÓN PARA NAVTAB---------*/
+@media screen and (min-width: 320px) and (max-width: 424px){
+	
+	/*Propiedades de heders responsivos*/
+	h1{
+		font-size:38px;
+	}
+	h2{
+		font-size:32px;
+	}
+	h3{
+		font-size:28px;
+	}
+	h4{
+		font-size:24px;
+	}
+	h5{
+		font-size:20px;
+	}
+	h6{
+		font-size:16px;
+	}
+	
+	/*alineacion del parrafo*/
+	
+    p{
+		font-size:18px;
+		margin:.75em 0;
+		padding:2px;
+	}
+
+    .modal{
+        width: 300px;
+        height: 400px;
+        overflow: scroll;
+    }
+	
+	
+    .columna_xs_1{
+		 box-sizing: border-box;
+        float: left;
+        width: 8.333333333333333%;
+        text-align: center; 
+    }
+    
+    .columna_xs_2{
+		 box-sizing: border-box;
+        float: left;
+        width: 16.66666666666667%;
+        text-align: center; 
+        
+    }
+    
+    .columna_xs_3{
+		 box-sizing: border-box;
+        float: left;
+        width: 25%;
+        text-align: center; 
+        
+    }
+    
+    
+    .columna_xs_4{
+		 box-sizing: border-box;
+        float: left;
+        width: 33.333333333333333%;
+        text-align: center; 
+        
+    }
+    .columna_xs_5{
+		 box-sizing: border-box;
+        float: left;
+        width: 41.66666666666667%;
+        text-align: center; 
+        
+    }    
+    .columna_xs_6{
+		 box-sizing: border-box;
+        float: left;
+        width: 50%;
+        text-align: center; 
+        
+    }
+    .columna_xs_7{
+ box-sizing: border-box;
+        float: left;
+        width: 58.333333333333333%;
+        text-align: center; 
+    }
+    
+    .columna_xs_8{
+		 box-sizing: border-box;
+        float: left;
+        width: 66.66666666666667%;
+        text-align: center; 
+        
+    }
+    
+    .columna_xs_9{
+		 box-sizing: border-box;
+        float: left;
+        width: 75%;
+        text-align: center; 
+        
+    }
+    
+    
+    .columna_xs_10{
+		 box-sizing: border-box;
+        float: left;
+        width: 83.333333333333333%;
+        text-align: center; 
+        
+    }
+    .columna_xs_11{
+		 box-sizing: border-box;
+        float: left;
+        width: 91.66666666666667%;
+        text-align: center; 
+        
+    }    
+    .columna_xs_12{
+		 box-sizing: border-box;
+        float: left;
+        width: 100%;
+        text-align: center; 
+        
+    }
+
+    /*espacio de deparacion de 1 columna*/
+    .imaginario_xs_1{
+        margin-left: 8.333333333333333%;
+    }
+    /*espacio de deparacion de 2 columnas*/
+    .imaginario_xs_2{
+        margin-left: 16.666666666666666%;
+    }
+    /*espacio de deparacion de 3 columnas*/
+    .imaginario_xs_3{
+        margin-left: 25%;
+    }
+    /*espacio de deparacion de 4 columnas*/
+    .imaginario_xs_4{
+        margin-left: 33.333333333333333%;
+    }
+    /*espacio de deparacion de 5 columnas*/
+    .imaginario_xs_5{
+        margin-left: 41.666666666666666%;
+    }
+    /*espacio de deparacion de 6 columnas*/
+    .imaginario_xs_6{
+        margin-left: 50%;
+    }
+    /*espacio de deparacion de 7 columnas*/
+    .imaginario_xs_7{
+        margin-left: 58.333333333333333%;
+    }
+    /*espacio de deparacion de 8 columnas*/
+    .imaginario_xs_8{
+        margin-left: 66.666666666666666%;
+    }
+    /*espacio de deparacion de 9 columnas*/
+    .imaginario_xs_9{
+        margin-left: 75%;
+    }
+    /*espacio de deparacion de 10 columnas*/
+    .imaginario_xs_10{
+        margin-left: 83.333333333333333%;
+    }
+    /*espacio de deparacion de 11 columnas*/
+    .imaginario_xs_11{
+        margin-left: 91.666666666666666%;
+    }
+
+}
+
+/*Resolución s - small*/
+@media screen and (min-width:425px) and (max-width: 767px){
+	
+
+	/*Propiedades de heders responsivos*/
+	h1{
+		font-size:39px;
+	}
+	h2{
+		font-size:33px;
+	}
+	h3{
+		font-size:26px;
+	}
+	h4{
+		font-size:23px;
+	}
+	h5{
+		font-size:19px;
+	}
+	h6{
+		font-size:17px;
+	} 	
+	
+	p{
+		font-size:14px;
+		margin:1em 0;
+		padding:.5em;
+	}
+    .modal{
+        width: 75%;
+        height: 60%;
+        overflow: scroll;
+    }
+    /*Columnas*/
+    .columna_s_1{ /*Vale el 1/12 cada uno de los números se le suma el mismo número en cada iteración (X=Xn+8.33)*/
+        width: 8.33%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_2{
+        width: 16.66%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_3{
+        width: 24.99%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_4{
+        width: 33.32%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_5{
+        width: 41.65%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_6{
+        width: 49.98%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_7{
+        width: 58.31%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_8{
+        width: 66.64%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_9{
+        width: 74.97%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_10{
+        width: 83.3%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_11{
+        width: 91.63%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+    .columna_s_12{
+        width: 99.96%;
+        display: inline-block;
+        float: left;
+        box-sizing:border-box;
+    }
+
+    /*columnas Imaginarios*/
+    .imaginario_s_1{ /*Contiene espacio correspondiente a columna-1*/
+        margin-left: 8.33%;
+    }
+    .imaginario_s_2{ /*Contiene espacio correspondiente a columna-2*/
+        margin-left: 16.66%;
+    }
+    .imaginario_s_3{ /*Contiene espacio correspondiente a columna-3*/
+        margin-left: 24.99%;
+    }
+    .imaginario_s_4{ /*Contiene espacio correspondiente a columna-4*/
+        margin-left: 33.32%;
+    }
+    .imaginario_s_5{ /*Contiene espacio correspondiente a columna-5*/
+        margin-left: 41.65%;
+    }
+    .imaginario_s_6{ /*Contiene espacio correspondiente a columna-6*/
+        margin-left: 49.98% ;
+    }
+    .imaginario_s_7{ /*Contiene espacio correspondiente a columna-7*/
+        margin-left: 58.31% ;
+    }
+    .imaginario_s_8{ /*Contiene espacio correspondiente a columna-8*/
+        margin-left: 66.64% ;
+    }
+    .imaginario_s_9{ /*Contiene espacio correspondiente a columna-9*/
+        margin-left: 74.97% ;
+    }
+    .imaginario_s_10{ /*Contiene espacio correspondiente a columna-10*/
+        margin-left: 83.3% ;
+    }
+    .imaginario_s_11{ /*Contiene espacio correspondiente a columna-11*/
+        margin-left: 91.63% ;
+    }
+}
+
+/*Resolución m - media*/
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	
+	
+	/*Propiedades de heders responsivos*/
+	h1{
+		font-size:40px;
+	}
+	h2{
+		font-size:35px;
+	}
+	h3{
+		font-size:30px;
+	}
+	h4{
+		font-size:27px;
+	}
+	h5{
+		font-size:25px;
+	}
+	h6{
+		font-size:18px;
+	} 	
+	
+	p{
+		font-size:14px;
+		margin:1em 0;
+		padding:.5em;
+	}
+
+    /*Generalizacion de propiedades a columnas e imaginarios.*/
+    .columna_m_1,.columna_m_2,.columna_m_3,.columna_m_4,.columna_m_5,.columna_m_6,.columna_m_7,.columna_m_8,.columna_m_9,.columna_m_10,.columna_m_11,.columna_m_2,.imaginario_m_1,.imaginario_m_2,.imaginario_m_3,.imaginario_m_4,.imaginario_m_5,.imaginario_m_6,.imaginario_m_7,.imaginario_m_8,.imaginario_m_9,.imaginario_m_10,.imaginario_m_11,.imaginario_m_12{
+        float: left;
+        position: relative;
+    }*/
+  
+    /*Asignacion del ancho a las columnas e imaginarios*/
+    .columna_m_1{
+    width: 8.333333333%;
+    box-sizing: border-box;
+    }
+    .columna_m_2{
+    width: 16.66666667%;
+    box-sizing: border-box;
+    }
+    .columna_m_3{
+    width: 25%;
+    box-sizing: border-box;
+    }
+    .columna_m_4{
+    width: 33.33333333%;
+    box-sizing: border-box;
+    }
+    .columna_m_5{
+    width: 41.66666667%;
+    box-sizing: border-box;
+    }
+    .columna_m_6{
+    width: 50%;
+    box-sizing: border-box;
+    }
+    .columna_m_7{
+    width: 58.33333333%;
+    box-sizing: border-box;
+    }
+    .columna_m_8{
+    width: 66.66666666%;
+    box-sizing: border-box;
+    }
+    .columna_m_9{
+    width: 75%;
+    box-sizing: border-box;
+    }
+    .columna_m_10{
+    width: 83.33333333%;
+    box-sizing: border-box;
+    }
+    .columna_m_11{
+    width: 91.66666666%;
+    box-sizing: border-box;
+    }
+    .columna_m_12{
+    width: 100%;
+    box-sizing: border-box;
+    }
+    .imaginario_m_1{
+    margin-left: 8.333333333%;
+    }
+    .imaginario_m_2{
+    margin-left:  16.66666667%;
+    }
+    .imaginario_m_3{
+    margin-left: 25%;
+    }
+    .imaginario_m_4{
+    margin-left: 33.33333333%;
+    }
+    .imaginario_m_5{
+    margin-left: 41.66666667%;
+    }
+    .imaginario_m_6{
+    margin-left:  50%;
+    }
+    .imaginario_m_7{
+    margin-left: 58.33333333%;
+    }
+    .imaginario_m_8{
+    margin-left: 66.66666666%;
+    }
+    .imaginario_m_9{
+    margin-left:  75%;
+    }
+    .imaginario_m_10{
+    margin-left: 83.33333333%;
+    }
+    .imaginario_m_11{
+    margin-left:  91.66666666%;
+    }
+    .imaginario_m_12{
+    margin-left:  100%;
+    }
+	
+	
+}
+
+/*Resolución l - large*/
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+   
+
+	/*Propiedades de heders responsivos*/
+	h1{
+		font-size:45px;
+	}
+	h2{
+		font-size:40px;
+	}
+	h3{
+		font-size:35px;
+	}
+	h4{
+		font-size:27px;
+	}
+	h5{
+		font-size:22px;
+	}
+	h6{
+		font-size:19px;
+	}   
+	
+	p{
+		font-size:15px;
+		margin:1em 0;
+		padding:10px;
+	}
+ 
+    /*propiedades de los "espacios" entre columnas*/
+    .imaginario_l_1{
+    margin-left:8.333%;
+    }
+    .imaginario_l_2{
+    margin-left:16.666%;
+    }
+    .imaginario_l_3{
+    margin-left:25%;
+    }
+    .imaginario_l_4{
+    margin-left:33.33%;
+    }
+    .imaginario_l_5{
+    margin-left:41.666%;
+    }
+    .imaginario_l_6{
+    margin-left:50%;
+    }
+    .imaginario_l_7{
+    margin-left:58.333%;
+    }
+    .imaginario_l_8{
+    margin-left:66.666%;
+    }
+    .imaginario_l_9{
+    margin-left:75%;
+    }
+    .imaginario_l_10{
+    margin-left:83.333%;
+    }
+    .imaginario_l_11{
+    margin-left:91.666%;
+    }
+/*propiedades de las columnas ; columna es el resultado de dividir la fila en 12 fragmentos y representa uno de esos fragmentos o bien un multiplo de estos.*/
+    .columna_l_1{
+      width: 8.333%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_2{
+      width: 16.666%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_3{
+      width: 25%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_4{
+      width: 33.333%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_5{
+      width: 41.666%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_6{
+      width: 50%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_7{
+      width: 58.333%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_8{
+      width: 66.666%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box; 
+    }
+    .columna_l_9{
+      width: 75%; 
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_10{
+      width: 83.333%;
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+     }
+    .columna_l_11{
+      width: 91.666%;
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+    }
+    .columna_l_12{
+      width: 100%;
+      float: left; 
+      padding:5px 8px 5px 8px;
+      box-sizing:border-box;
+     }
+}
+
+/*Resolución xl - extra large*/
+@media screen and (min-width: 1441px) and (max-width: 2560px)  {
+    
+	/*Propiedades de heders responsivos*/
+	h1{
+		font-size:47px;
+	}
+	h2{
+		font-size:42px;
+	}
+	h3{
+		font-size:35px;
+	}
+	h4{
+		font-size:30px;
+	}
+	h5{
+		font-size:25px;
+	}
+	h6{
+		font-size:20px;
+	} 
+	
+	p{
+		font-size:16px;
+		margin:1em 0;
+		padding:10px;
+	}
+
+    /*Cada columna representa la divison de nuestra fila en 12 partes iguales */
+    .columna_xl_1{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 8.3%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        min-height: 1px;
+        
+
+    }
+
+    .columna_xl_2{
+	   float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 16.6%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }	
+
+    
+
+    .columna_xl_3{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 24.9%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+    .columna_xl_4{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px; 
+        width: 33.2%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+     .columna_xl_5{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 41.6%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    .columna_xl_6{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 49.8%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_7{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 58.3%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_8{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 66.6%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_9{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 75%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_10{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 83.3%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_11{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 91.6%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+     .columna_xl_12{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    /*los imaginarios son la delimitacion de espacio hacia la izquierda que no se va a ocupar*/
+    .imaginario_xl_1{
+        
+        margin-left: 8.3%;
+       
+    }
+    .imaginario_xl_2{
+      
+        margin-left: 16.6%;
+    
+    }
+
+    .imaginario_xl_3{
+        
+        margin-left: 24.9%;
+      
+    }
+    .imaginario_xl_4{
+       
+        margin-left: 33.2%;
+       
+    }
+    .imaginario_xl_5{
+        
+        margin-left: 41.6%;
+    }
+    .imaginario_xl_6{
+        
+        margin-left: 49.8%;
+    }
+    .imaginario_xl_7{
+        
+        margin-left: 58.3%;
+    }
+    .imaginario_xl_8{
+        
+        margin-left: 66.6%;
+    }
+    .imaginario_xl_9{
+        
+        margin-left: 75%;
+    }
+    .imaginario_xl_10{
+        
+        margin-left: 83.3%;
+    }
+    .imaginario_xl_11{
+        
+        margin-left: 91.6%;
+    }
+    .imaginario_xl_12{
+        
+        margin-left: 100%;
+    }
+}
+.nav_static, footer{
+	background: #9ac3f3;
+}
+/*::::::::::::::::ESTILO FORMS::::::::::::::*/
+    .legend_form {
+        width: 100%;
+        padding: 40px;
+        margin-bottom: 20px;
+        border: 0;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 25px;
+        color: #333;
+    }
+
+    .fieldset_form {
+        margin-top: 5%;
+        padding: 50px; 
+        width: 100%;   
+    }
+
+
+    .form_grupo {
+        padding-bottom: 30px;
+    }
+
+    
+    .form_label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 45px;
+    }
+
+    
+
+
+    .form_control_grande{
+        display: block;
+        width: 70%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ccc;
+        margin-left: 90px;    
+        border-radius: 4px;
+    }
+    .form_control_grande:focus, .form_control_grande:hover {
+        background-color: #fafafa;
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+    
+    
+    .form_control_chico{
+        display: block;
+        width: 50%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ccc;
+        margin-left: 90px;    
+        border-radius: 4px;
+    }
+    .form_control_chico:focus, .form_control_chico:hover {
+        background-color: #fafafa;
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+
+
+    .form_control_comentario{
+        display: block;
+        width: 70%;
+        height: 100px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ccc;
+        margin-left: 90px;    
+        border-radius: 4px;
+    }
+    .form_control_comentario:focus, .form_control_comentario:hover {
+        background-color: #fafafa;
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+
+
+    .form_control_tel1 {
+        width: 10%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ccc;
+        margin-left: 90px;    
+        text-align: left;
+        border-radius: 4px;
+    }
+    .form_control_tel1:focus, .form_control_tel1:hover {
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        background-color: #fafafa;
+    }
+    
+
+    .form_control_tel2 {
+        width: 39%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form_control_tel2:focus, .form_control_tel2:hover {
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        background-color: #fafafa;
+    }
+    
+    
+    .form_control_oculto{
+        display: block;
+        width: 50%;
+        height: 40px;
+        padding: 6px 12px;
+        border: 0;
+        margin-left: 90px;    
+        color: #555;
+    }
+    .form_control_oculto:focus {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fafafa;
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+    .form_control_oculto:hover{
+        border-color: rgba(82,168,236,.8);
+        background-color: #fafafa;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+
+
+    fieldset.grupo_checkbox, fieldset.grupo_radio{
+        border-radius: 8px; 
+        width: 40%;
+     }
+
+    .grupo_checkbox legend, .grupo_radio legend {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        margin-left: 20px;
+        border: 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .grupo_checkbox label, .grupo_radio label {
+        cursor: pointer;  
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 25px;
+    }
+
+   
+
+    .form_r, .form_cb{
+        margin-bottom: 5px;
+        height: 35px;
+        width: 90%;     
+    }
+
+    .form_r:hover, .form_cb:hover{
+        background-color: #E6E6E6;
+        border: 1px #81BEF7 solid;        
+        text-decoration: underline;
+    }
+
+    .focus{
+        background-color: #E6E6E6;
+        border: 1px #81BEF7 solid;
+        height: 35px;
+        width: 90%;
+    }    
+    .form_control {
+        display: block;
+        width: 80%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-left: 50px;    
+    }    
+
+    /*::::::::::::::::FIN ESTILO FORMS::::::::::::::*/
