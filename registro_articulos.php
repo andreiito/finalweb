@@ -30,23 +30,23 @@
 					echo "<div class=\"form_grupo\">";
 						echo "<label class=\"form_label\" for=\"select\">Editorial del comic</label>"; 
 					echo "<select class=\"form_control_chico\" id=\"select\" name=\"editorial\">";
-
-							include "conexion.php";
+					include "conexion.php";
 							$sqlEdit= "select * from editoriales;";
-							$edit= consulta($sqlEdit);
+							$query = edit($sqlEdit);	
+							
 
-							while ($row = pg_fetch_row($edit)) {
+							while ($row= pg_fetch_row($query)) {
 							  echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
 							}
 					echo "</select>";  
-					echo "</div>";}
+					echo "</div>";
 
 					echo "<div class=\"form_grupo\">";
 						echo "<label class=\"form_label\" for=\"select\">Autor del comic</label>"; 
 					echo "<select class=\"form_control_chico\" id=\"select\" name=\"autor\">";
 
 							$sqlAut= "select * from autores;";
-							$aut= consulta($sqlEdit);
+							$aut= edit($sqlAut);
 
 							while ($row = pg_fetch_row($aut)) {
 							  echo "<option value=\"".$row[0]."\">".$row[1]."</option>";

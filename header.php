@@ -31,7 +31,7 @@
 						echo "<li class=\"link\"><a href=\"registro.php\" aria-label=\"Dar de alta a Usuario\">Agregar Usuario</a></li>";
 						echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Dar de baja a Usuario\">Eliminar Usuario </a></li>";
 						//Articulos
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"registro_articulos.php\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
 						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
 
