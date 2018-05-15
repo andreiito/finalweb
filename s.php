@@ -7,8 +7,8 @@ session_start();
 //			echo "<h1>a</h1>";
 //}
 //include "conexion.php";
-//var_dump ($_POST);
-print_r ($_FILES);
+var_dump ($_POST);
+//print_r ($_FILES);
 
 
 

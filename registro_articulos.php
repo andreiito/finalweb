@@ -64,7 +64,7 @@
 							$aut= edit($sqlAut);
 
 							while ($row = pg_fetch_row($aut)) {
-							  echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
+							  echo "<option value=\"".$row[0]."\">".$row[1]." ".$row[2]."</option>";
 							}
 					echo "</select>";  
 					echo "</div>";}

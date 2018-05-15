@@ -20,20 +20,20 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 	else{
 		if(isset($_FILES["imgcomic"]) && $_FILES["imgcomic"]["name"]){
 
-		
+	$carpetaDestino="img_comics/";$carpetaDestino="img_comics/";$carpetaDestino="img_comics/";$carpetaDestino="img_comics/";	
 		
 	    # si es un formato de imagen
         if($_FILES["imgcomic"]["type"]=="image/jpeg" || $_FILES["imgcomic"]["type"]=="image/pjpeg" || $_FILES["imgcomic"]["type"]=="image/gif" || $_FILES["imgcomic"]["type"]=="image/png"){
 	    # si exsite la carpeta o se ha creado
-             if(file_exists($carpetaDestino) || mkdir($carpetaDestino)){
+             if(file_exists($carpetaDestino)){
 
                 $origen=$_FILES["imgcomic"]["tmp_name"];
                 $destino=$carpetaDestino.$_FILES["imgcomic"]["name"];
-
+		
 		# movemos el archivo
                 if(move_uploaded_file($origen, $destino)){
                 	//insertar en tabla comics
-                	$scomic = "insert into comics (titulo, cantidad, precio, url, id_editorial, id_descuento) values ('".$titulo."',".$cant.",".$precio.",'".$url."','".$edit."',".$desc.")";	
+                	$scomic = "insert into comics (titulo, cantidad, precio, url, id_editorial, id_descuento) values ('".$titulo."',".$cant.",".$precio.",'".$destino."','".$edit."',".$desc.")";	
 					$altacomic=consulta($scomic);
 					//insertar en tabla 
                     header("Location: index.php");
