@@ -8,7 +8,7 @@
 	<?php include "header.php" ?>
 	
 	<div class="pagina">
-		<form action="s.php" method="post" enctype="multipart/form-data">
+		<form action="alta_articulo.php" method="post" enctype="multipart/form-data">
 				
 			<fieldset class="fieldset_form"> <legend class="legend_form"> Registraro de art&iacute;culos </legend> 
 

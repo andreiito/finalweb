@@ -13,8 +13,7 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 	$sqlcomic="select titulo from comics WHERE titulo = '".$titulo."';";
 	$filtro_comic=consulta($sqlcomic);
 	if ($filtro_comic){
-		header("Location: registro.php");
-		//echo "<p>El nombre de Usuario ya está ocupado, por favor introduzca otro</p>";
+		header("Location: registro_articulos.php");
 	}
 	else{
 		if(isset($_FILES["imgcomic"]) && $_FILES["imgcomic"]["name"]){
