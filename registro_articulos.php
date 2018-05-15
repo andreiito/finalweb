@@ -8,7 +8,7 @@
 	<?php include "header.php" ?>
 	
 	<div class="pagina">
-		<form action="s.php" method="post">
+		<form action="s.php" method="post" enctype="multipart/form-data">
 				
 			<fieldset class="fieldset_form"> <legend class="legend_form"> Registraro de art&iacute;culos </legend> 
 
@@ -57,7 +57,7 @@
 				?>
 			<div class="form_grupo">
 				<label class="form_label" for="inputText"> imagen del comic</label>
-				<input name="imgcomic" type="file" class="form_control_grande" id="inputText" accept=".jpg, .jpeg, .png">
+				<input name="imgcomic" type="file" class="form_control_grande" id="inputText">
 			</div>	
 
 
