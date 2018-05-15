@@ -25,12 +25,27 @@
 					<label class="form_label" for="inputText"> Precio del comic</label>
 					<input type="text" class="form_control_grande" aria-label="ingrese el precio del comic" id="inputText" name="precio" placeholder="texto" />  
 				</div>
+				<div class="form_grupo">
+					<label class="form_label" for="inputText"> Descuento del comic</label>
 				<?php 
 				if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
+				include "conexion.php";
+					echo "<select class=\"form_control_chico\" id=\"select\" name=\"desc\">";
+					$sqlDesc= "select * from descuento;";
+							$query = edit($sqlDesc);	
+							
+
+							while ($row= pg_fetch_row($query)) {
+							  echo "<option value=\"".$row[0]."\">".$row[1]."</option>";
+							}
+					echo "</select>";  
+					echo "</div>";
+
+
 					echo "<div class=\"form_grupo\">";
-						echo "<label class=\"form_label\" for=\"select\">Editorial del comic</label>"; 
+					echo "<label class=\"form_label\" for=\"select\">Editorial del comic</label>"; 
 					echo "<select class=\"form_control_chico\" id=\"select\" name=\"editorial\">";
-					include "conexion.php";
+					
 							$sqlEdit= "select * from editoriales;";
 							$query = edit($sqlEdit);	
 							

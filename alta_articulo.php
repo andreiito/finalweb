@@ -9,6 +9,8 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 	$edit = $_POST['editorial'];
 	$autor = $_POST['autor'];
 	$url = $_POST['url'];
+	$desc = $_POST['desc'];
+
 
 	$sqlcomic="select titulo from comics WHERE titulo = '".$titulo."';";
 	$filtro_comic=consulta($sqlcomic);
@@ -18,8 +20,7 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 	else{
 		if(isset($_FILES["imgcomic"]) && $_FILES["imgcomic"]["name"]){
 
-		$scomic = "insert into comics (titulo, cantidad, precio, url, id_editorial) values ('".$titulo."',".$cant.",".$precio.",'".$url."','".$edit."')";	
-		$altacomic=consulta($scomic);
+		
 		
 	    # si es un formato de imagen
         if($_FILES["imgcomic"]["type"]=="image/jpeg" || $_FILES["imgcomic"]["type"]=="image/pjpeg" || $_FILES["imgcomic"]["type"]=="image/gif" || $_FILES["imgcomic"]["type"]=="image/png"){
@@ -31,6 +32,10 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 
 		# movemos el archivo
                 if(move_uploaded_file($origen, $destino)){
+                	//insertar en tabla comics
+                	$scomic = "insert into comics (titulo, cantidad, precio, url, id_editorial, id_descuento) values ('".$titulo."',".$cant.",".$precio.",'".$url."','".$edit."',".$desc.")";	
+					$altacomic=consulta($scomic);
+					//insertar en tabla 
                     header("Location: index.php");
 				}
 				else{

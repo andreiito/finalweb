@@ -75,9 +75,11 @@ cantidad smallint not null,
 precio smallint not null,
 url varchar(30) not null,
 id_editorial serial not null,
+id_descuento serial not null,
 
 PRIMARY KEY (id_comic),
-FOREIGN KEY (id_editorial) REFERENCES editoriales (id_editorial)
+FOREIGN KEY (id_editorial) REFERENCES editoriales (id_editorial),
+FOREIGN KEY (id_descuento) REFERENCES descuento (id_descuento)
 
 );
 
