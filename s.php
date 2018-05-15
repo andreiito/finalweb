@@ -32,19 +32,23 @@ echo $edit[0]['nombre'];*/
 	    # si es un formato de imagen
         if($_FILES["imgcomic"]["type"]=="image/jpeg" || $_FILES["imgcomic"]["type"]=="image/pjpeg" || $_FILES["imgcomic"]["type"]=="image/gif" || $_FILES["imgcomic"]["type"]=="image/png"){
 	    # si exsite la carpeta o se ha creado
+             if(file_exists($carpetaDestino) || mkdir($carpetaDestino)){
+
                 $origen=$_FILES["imgcomic"]["tmp_name"];
                 $destino=$carpetaDestino.$_FILES["imgcomic"]["name"];
-		echo $origen;
-		echo "<br>";
-		echo $destino;
 
 		# movemos el archivo
-                if(@move_uploaded_file($origen, $destino)){
+                if(move_uploaded_file($origen, $destino)){
                     echo "<br>".$_FILES["imgcomic"]["name"]." movido correctamente";
-		}
-		else{
-		   	
-		}
+				}
+				else{
+                        echo "<br>No se ha podido mover el archivo: ".$_FILES["imgcomic"]["name"];
+                }
+            }
+           else{
+                    echo "<br>No se ha podido crear la carpeta: ".$carpetaDestino;
+                }
+		
         }
         else{
             echo "<br>".$_FILES["imgcomic"]["name"]." - NO es imagen jpg, png o gif";
