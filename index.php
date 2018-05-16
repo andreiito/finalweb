@@ -13,6 +13,7 @@
 				<div class=" contenedor_carrusel columna_m_8 imaginario_m_2 columna_l_8 imaginario_l_2 columna_xl_8 imaginario_xl_2 alinear_centro">
 				<?php
 				include "conexion.php";
+				
 				$sqlNew= "select * from comics ORDER BY id_comic DESC limit 3;";
 							$query = edit($sqlNew);
 							while ($row= pg_fetch_row($query)) {
