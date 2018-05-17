@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexion.php";
+//include "conexion.php";
 if(!$_SESSION['usuario']){
 	$usuario = $_POST['usuario']; 
 	$contrasena = $_POST['pass'];
@@ -26,11 +26,13 @@ if(!$_SESSION['usuario']){
 	}
 	else{
 		$alta = "insert into usuarios (nombre, appaterno, apmaterno, telefono, correo, usuario, contrasena, id_tipo) values ('".$nombre."','".$apPaterno."','".$apMaterno."','".$tel."','".$correo."','".$usuario."','".$contrasena."','".$tipoUsuario."')";	
+		
 		$altausuario=consulta($alta);
 		$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
-		$idUs = consulta($selUs);
-		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','"$numero."','".$int."','"$colonia."', '".$del."','".$cp."',".$idUs.");";
 		
+		$idUs = consulta($selUs);
+		
+		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
 		if($altausuario){
 		header("Location: index.php");
 		}
@@ -64,7 +66,7 @@ if($_SESSION['tipo']=='admin'){
 		$altausuario=consulta($alta);
 		$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
 		$idUs = consulta($selUs);
-		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','"$numero."','".$int."','"$colonia."', '".$del."','".$cp."',".$idUs.");";
+		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
 		
 		if($altausuario){
 		header("Location: index.php");
