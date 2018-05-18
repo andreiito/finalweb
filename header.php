@@ -17,6 +17,7 @@
 
 				if(isset($_SESSION['usuario'])){
 								
+					echo "<li class=\"link\"><a href=\"articulos.php\" aria-label=\"Ver los articulos\">Articulos</a></li>";
 					echo "<li class=\"link\"><a href=\"carrito.php\" aria-label=\"Ir a mi carrito\">Carrito</a></li>";
 					echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Cancelar mi suscripción\">Dar de baja mi cuenta</a></li>";
 					echo "<li class=\"link\"><a href=\"cerrar_sesion.php\" aria-label=\"Salir de la sesi&oacute;n\">Cerrar Sesi&oacute;n</a></li>";

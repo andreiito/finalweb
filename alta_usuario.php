@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include "conexion.php";
+include "conexion.php";
 if(!$_SESSION['usuario']){
 	$usuario = $_POST['usuario']; 
 	$contrasena = $_POST['pass'];
@@ -16,7 +16,7 @@ if(!$_SESSION['usuario']){
 	$cp = $_POST['cp'];
 	$num = $_POST['num'];
 	$int = $_POST['int'];
-	$tel = $_POST^['tel'];
+	$tel = $_POST['tel'];
 
 	$sqlusuarios="select usuario from usuarios WHERE usuario = '".$usuario."';";
 	$filtro_usuarios=consulta($sqlusuarios);
@@ -25,17 +25,20 @@ if(!$_SESSION['usuario']){
 		echo "<p>Su nombre de Usuario ya está ocupado, por favor introduzca otro</p>";
 	}
 	else{
-		$alta = "insert into usuarios (nombre, appaterno, apmaterno, telefono, correo, usuario, contrasena, id_tipo) values ('".$nombre."','".$apPaterno."','".$apMaterno."','".$tel."','".$correo."','".$usuario."','".$contrasena."','".$tipoUsuario."')";	
-		
+		$alta = "insert into usuarios (nombre, appaterno, apmaterno, telefono, correo, usuario, contrasena, id_tipo) values ('".$nombre."','".$apPaterno."','".$apMaterno."','".$tel."','".$correo."','".$usuario."','".$contrasena."','".$tipoUsuario."');";	
+	
 		$altausuario=consulta($alta);
 		$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
 		
 		$idUs = consulta($selUs);
+		$idUs = $idUs[0]['id_usuario'];
 		
-		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
-		if($altausuario){
+		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$num."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
+		
+		$dir = consulta($sqlDir);
+
 		header("Location: index.php");
-		}
+		
 	}
 }
 if($_SESSION['tipo']=='admin'){
@@ -66,11 +69,10 @@ if($_SESSION['tipo']=='admin'){
 		$altausuario=consulta($alta);
 		$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
 		$idUs = consulta($selUs);
-		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
+		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$num."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
 		
-		if($altausuario){
 		header("Location: index.php");
-		}
+		
 	}	
 
 }
