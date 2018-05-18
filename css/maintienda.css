@@ -1346,3 +1346,8 @@ nav > .lista_menu{
     }    
 
     /*::::::::::::::::FIN ESTILO FORMS::::::::::::::*/
+
+.articulo{
+	background-color: #789;
+	border: 3px solid #000;
+}
