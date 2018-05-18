@@ -8,26 +8,21 @@
 	<?php include "header.php" ?>
 	<div class="pagina">
 		<div class="fila">
-				<div class="  columna_m_8 imaginario_m_2 columna_l_8 imaginario_l_2 columna_xl_8 imaginario_xl_2 alinear_centro">
 				<?php
 				include "conexion.php";
 				
 				$sqlNew= "select * from comics;";
 				$query = edit($sqlNew);
 				while ($row= pg_fetch_row($query)) {
-				echo "<section class=\"contenido_carrusel \">";
-				echo "<h3 class=\"alinear_centro titulo_carrusel\" >".$row[1]."</h3>";
-				echo "<img class=\"imagen_carrusel\" alt=\"\" src=\"".$row[4]."\">";
-			  	echo "<p class=\"alinear_centro texto_carrusel\">Precio: ".$row[3]." </p>";
-			  	echo "</section>";
-							}
-
-
+					echo "<div class=\" columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12 articulo\">";
+					echo "<img class=\"\" alt=\"columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12\" src=\"".$row[4]."\">";					
+					echo "<h3 class=\"columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12\" >".$row[1]."</h3>";
+				  	echo "<p class=\"columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12\">Precio: ".$row[3]." </p>";
+				  	echo "<button id=\"addCart\">Agregar al carrito</button>";
+				  	echo "</div>";
+			  	}
+				
 				?>
-				</div><!--Fin contenedor carrusel-->
-				<div class="contenedor_navegador_carrusel columna_m_8 imaginario_m_2 columna_l_8 imaginario_l_2 columna_xl_8 imaginario_xl_2 alinear_centro">
-				</div><!--Fin navegador carrusel-->
-			</div><!--Fin carrusel-->
 		</div><!--Fin fila-->
 	</div><!--fin pagina-->
 
