@@ -1,9 +1,10 @@
 $(document).ready(function(){
   $("#addCart").click(function(){
       var id_articulo = $(this).parent().attr("id");
-      var nombre_articulo = $(this).parent().children().html;
-      $(".datos").text("<?php array_push($_SESSION['articulos'], "+id_articulo+"; ?>");
+      var nombre_articulo = $(this).parent().children().html();
+      $.get("agregar_articulo.php");
       alert(nombre_articulo+" ha sido agregado a tu carrito");
+
   });
 });
 

@@ -12,7 +12,7 @@ session_start();
 
 
 
-//var_dump ($_SESSION);
+var_dump ($_SESSION);
 
 
 /*include "conexion.php";
@@ -51,8 +51,8 @@ echo $alta; */
 		//$selUs= "select id_usuario from usuarios where usuario='".$usuario."';";
 		//print $selUs;
 		
-		$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
-		print $sqlDir;
+		//$sqlDir= "insert into direccion (ciudad, calle, numero, numero_int, colonia, delegacion, cp, id_usuario) values ('".$ciudad."','".$calle."','".$numero."','".$int."','".$colonia."', '".$del."','".$cp."',".$idUs.");";
+	//	print $sqlDir;
 //		}
 
   
