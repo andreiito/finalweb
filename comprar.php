@@ -9,16 +9,19 @@
 	<div class="pagina">
 		<br/> <br/>
 		<h1>Gracias por su compra</h1>
-		<p>En breve recibir&aacute; un correo con los detalles de su compra</p>
 		
-		<?php
+<?php
+
+
 			include "conexion.php";
 			//mail
 			$query_correo= "select correo FROM usuarios where usuario= '".$_SESSION['usuario']."';";
-			$correo = consulta($query_id_us);
+			$correo = consulta($query_correo);
 
 			//datos para venta
 			$correo= $correo[0]['correo'];
+			
+		echo "<p>En breve recibir&aacute; un correo a: ".$correo." con los detalles de su compra</p>";
 			mail($correo, 'Venta', 'Su compra se ha efectuado');
 
 			/*

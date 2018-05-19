@@ -10,7 +10,7 @@
 		<br/> <br/>
 		<h1>Tu carrito</h1>
 		<div>
-		<form action="compra.php" method="post" >
+		<form action="comprar.php" method="post" >
 				
 			<fieldset class="fieldset_form"> <legend class="legend_form"> Articulos del Carrito </legend> 
 				<div class="form_grupo">
