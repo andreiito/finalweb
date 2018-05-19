@@ -20,7 +20,7 @@
 								echo "<section class=\"contenido_carrusel \">";
 								echo "<h3 class=\"alinear_centro titulo_carrusel\" >".$row[1]."</h3>";
 								echo "<img class=\"imagen_carrusel\" alt=\"\" src=\"".$row[4]."\">";
-							  	echo "<p class=\"alinear_centro texto_carrusel\">Precio: ".$row[3]." </p>";
+							  	echo "<p class=\"alinear_centro texto_carrusel\">Precio: $".$row[3]." </p>";
 							  	echo "</section>";
 							}
 

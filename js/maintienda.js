@@ -1,3 +1,4 @@
+//Agregar articulo al carrito
 $(document).ready(function(){
   $(".addCart").click(function(){
       var id_articulo = $(this).parent().attr("id");
@@ -16,7 +17,26 @@ $(document).ready(function(){
 
   });
 });
+//Quitar articulo del carrito
+$(document).ready(function(){
+  $(".elimCart").click(function(){
+      var id_articulo = $(this).parent().attr("id");
+      var nombre_articulo = $(this).parent().children().html();
+      $.ajax({
+        url:"quitar_articulo.php",
+              method: 'post',   
+        data: {"id_articulo": id_articulo}
+      }).done(function(data){
+      console.log(data);
+      
+      }).fail(function(data){
+  console.log("error");      
+      });
+      alert(nombre_articulo+" ha sido eliminado de tu carrito");
+      location.reload();
 
+  });
+});
 
 
 
