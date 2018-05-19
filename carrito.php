@@ -27,7 +27,7 @@
 					echo "<div class=\" columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12 articulo\" id=\"".$row[0]."\">";
 					echo "<span class=\" columna_m_12 columna_l_12 columna_xl_12 \" ><b>".$row[1]."</b></span><br/>";
 					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";					
-				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: ".$row[3]." </p>";
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \" name=\"precio\">Precio: ".$row[3]." </p>";
 				  	$total = $total + $row[3];
 				  	echo "<a class=\"elimCart alinear_centro\">Quitar del carrito</a>";
 					echo "</div></div><br/>";
