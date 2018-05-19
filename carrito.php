@@ -16,18 +16,21 @@
 				<div class="form_grupo">
 		<?php
 			include "conexion.php";
-			//var_dump($_SESSION['articulos']);
-			foreach ($_SESSION['articulos'] as $id) {
-				$sql = "select * from comics where id_comic =".$id.";";
+			
+			//print($_SESSION['articulos'][0]);
+			foreach($_SESSION['articulos'] as $id) {
+			
+				$sql = "select * from comics where id_comic ='".$id."';";
 				$com = edit($sql);
-				while ($row= pg_fetch_row($query)) {
-					echo "<div class=\"articulo\" id=\"".$row[0]."\">";
+				while ($row= pg_fetch_row($com)) {
+					echo "<div class=\"fila\">";
+					echo "<div class=\" columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12 articulo\" id=\"".$row[0]."\">";
 					echo "<span class=\" columna_m_12 columna_l_12 columna_xl_12 \" ><b>".$row[1]."</b></span><br/>";
 					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";					
 				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: ".$row[3]." </p>";
 				  	$total = $total + $row[3];
-				  	echo "<button class=\"elimCart\">Quitar del carrito</button>";
-
+				  	echo "<a class=\"elimCart alinear_centro\">Quitar del carrito</a>";
+					echo "</div></div><br/>";
 
 				}
 			}
@@ -35,7 +38,8 @@
 			
 
 
-		?>
+?>
+<br/>
 		<input type="submit" class="button" value="Comprar">
 		</fieldset>
 		</form>

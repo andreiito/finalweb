@@ -1354,3 +1354,8 @@ nav > .lista_menu{
 .img_art{
     width: 100px;
 }
+.elimCart{
+	background-color: #678;
+	border: 3px solid #000;
+}
+

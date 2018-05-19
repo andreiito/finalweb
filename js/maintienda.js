@@ -33,7 +33,7 @@ $(document).ready(function(){
   console.log("error");      
       });
       alert(nombre_articulo+" ha sido eliminado de tu carrito");
-      location.reload();
+     location.reload();
 
   });
 });
