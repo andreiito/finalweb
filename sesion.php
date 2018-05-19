@@ -4,6 +4,7 @@
 	$usuario=$_POST['usuario'];
 	$pass=$_POST['password'];
 
+ $_SESSION["articulos"] = array();
 	$sqlval = "select * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$pass."'";
 	include "conexion.php";
 	$valUP = consulta($sqlval);

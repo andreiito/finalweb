@@ -1,8 +1,17 @@
 $(document).ready(function(){
-  $("#addCart").click(function(){
+  $(".addCart").click(function(){
       var id_articulo = $(this).parent().attr("id");
       var nombre_articulo = $(this).parent().children().html();
-      $.get("agregar_articulo.php");
+      $.ajax({
+	      url:"agregar_articulo.php",
+      	      method: 'post',		
+	      data: {"id_articulo": id_articulo}
+      }).done(function(data){
+      console.log(data);
+      
+      }).fail(function(data){
+	console.log("error");      
+      });
       alert(nombre_articulo+" ha sido agregado a tu carrito");
 
   });

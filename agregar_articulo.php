@@ -1,5 +1,10 @@
 <?php
-$_SESSION['articulo']= 3;
-//array_push($_SESSION["articulos"],1); 
+session_start();
+
+$id_articulo= $_POST['id_articulo'];
+array_push($_SESSION["articulos"], $id_articulo);
+
+
+
 
 ?>

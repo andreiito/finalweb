@@ -1,3 +1,4 @@
+<header>
 	<nav class="nav_static nav_disp_block">
 		<a href="" class="nav_logo"><img src="img/carrito.jpg" class="img_logo" aria-label="carrito"></a>
 			<button class="boton_hamburguesa hamburguesa_derecha" aria-label="Desplegar men&uacute;" aria-expanded="false">
