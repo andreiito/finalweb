@@ -13,6 +13,15 @@
 		
 		<?php
 			include "conexion.php";
+			//mail
+			$query_correo= "select correo FROM usuarios where usuario= '".$_SESSION['usuario']."';";
+			$correo = consulta($query_id_us);
+
+			//datos para venta
+			$correo= $correo[0]['correo'];
+			mail($correo, 'Venta', 'Su compra se ha efectuado');
+
+			/*
 			$query_id_us= "select id_usuario FROM usuarios where usuario= '".$_SESSION['usuario']."';";
 			$id_us = consulta($query_id_us);
 
@@ -39,7 +48,7 @@
 				$vxc = consulta($sql_vxc);
 				
 			}
-			
+			*/
 			
 
 
