@@ -18,6 +18,10 @@
 					<input type="text" class="form_control_grande" aria-label="ingrese titulo del comic" id="inputText" name="titulo" placeholder="texto" />  
 				</div>
 				<div class="form_grupo">
+					<label class="form_label" for="inputText"> Descripción del comic</label>
+					<input type="text" class="form_control_grande" aria-label="ingrese titulo del comic" id="inputText" name="descripcion" placeholder="texto" />  
+				</div>
+				<div class="form_grupo">
 					<label class="form_label" for="inputText"> Cantidad de comics disponibles</label>
 					<input type="text" class="form_control_grande" aria-label="ingrese la cantidad disponible de comics" id="inputText" name="cantidad" placeholder="texto" />  
 				</div>

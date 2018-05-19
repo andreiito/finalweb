@@ -25,9 +25,10 @@
 				while ($row= pg_fetch_row($com)) {
 					echo "<div class=\"fila\">";
 					echo "<div class=\" columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12 articulo\" id=\"".$row[0]."\">";
-					echo "<span class=\" columna_m_12 columna_l_12 columna_xl_12 \" ><b>".$row[1]."</b></span><br/>";
-					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";					
-				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: ".$row[3]." </p>";
+					echo "<b><span class=\" columna_m_12 columna_l_12 columna_xl_12 \" >".$row[1]."</span></b><br/>";
+					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Descripci&oacute;n".$row[5]." </p>";					
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \" name=\"".$row[0]."\">Precio: ".$row[3]." </p>";
 				  	$total = $total + $row[3];
 				  	echo "<a class=\"elimCart alinear_centro\">Quitar del carrito</a>";
 					echo "</div></div><br/>";

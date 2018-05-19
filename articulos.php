@@ -22,7 +22,9 @@
 					echo "<div class= \"fila\">";
 					echo "<div class=\" columna_m_12 imaginario_m_12 columna_l_12 imaginario_l_12 columna_xl_12 imaginario_xl_12 articulo\" id=\"".$row[0]."\">";
 					echo "<h3 class=\"alinear_centro columna_m_12 columna_l_12 columna_xl_12 \" >".$row[1]."</h3>";
-					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";					
+					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: $".$row[5]." </p>";
+
 				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: $".$row[3]." </p>";
 				  	echo "<button class=\"addCart\">Agregar al carrito</button>";
 					echo "</div><!--fin articulo-->";
