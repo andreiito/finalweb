@@ -26,6 +26,7 @@
 				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">".$row[5]." </p>";
 
 				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Precio: $".$row[3]." </p>";
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Cantidad de productos disponibles: ".$row[2]." </p>";
 				  	echo "<button class=\"addCart\">Agregar al carrito</button>";
 					echo "</div><!--fin articulo-->";
 					echo "</div><!--fin fila--> <br/> <br/>";

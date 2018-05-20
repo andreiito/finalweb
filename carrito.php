@@ -28,14 +28,15 @@
 					echo "<b><span class=\" columna_m_12 columna_l_12 columna_xl_12 \" >".$row[1]."</span></b><br/>";
 					echo "<img class=\"columna_m_4 columna_l_4 columna_xl_4 img_art\" alt=\"\" src=\"".$row[4]."\">";
 				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \">Descripci&oacute;n".$row[5]." </p>";					
-				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 \" name=\"".$row[0]."\">Precio: ".$row[3]." </p>";
-				  	$total = $total + $row[3];
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 preciocom\" name=\"\">Precio del comic: <span class=\"precio\">".$row[3]."</span> </p>";
+				  	echo "<p class=\"columna_m_4 columna_l_4 columna_xl_4 totalXcomic\">Precio por cantidad: <span class=\"precioXcantidad\"></span> </p>";
 				  	echo "<a class=\"elimCart alinear_centro\">Quitar del carrito</a>";
+				  	echo "<p type=\"text\" class=\"alinear_centro\" >Cantidad a comprar: <span class=\"cantidad\" name=\"cantidad".$row[1]."\">1</span><span class=\"mas\">+</span><span class=\"menos\">-</span></p>";
 					echo "</div></div><br/>";
 
 				}
 			}
-			echo "Total de la compra: $".$total;
+			echo "Total de la compra: $<span class=\"total\"></span>";
 			
 
 

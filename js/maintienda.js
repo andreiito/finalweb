@@ -1,3 +1,32 @@
+//total
+$(document).ready(function(){
+  $(".totalXcomic").each(function(){
+     var total = $(".total").html();
+     total = total + $(this).html(); 
+    });
+  });
+
+//totalXcomic
+$(document).ready(function(){
+  $(".cantidad").change(function(){
+     var $precio= $(this).parent().siblings(".preciocom").children(".precio").html();
+     $(this).parent().siblings(".totalXcomic").children(".precioxcantidad") = $precio * $(this).html();
+    });
+  });
+
+//aumentar cantidad de articulos
+$(document).ready(function(){
+  $(".mas").click(function(){
+     $(this).siblings(".cantidad").html()+1;
+    });
+  });
+//disminuir cantidad de articulos
+$(document).ready(function(){
+  $(".menos").click(function(){
+     $(this).siblings(".cantidad").html()-1;
+    });
+  });
+
 //Agregar articulo al carrito
 $(document).ready(function(){
   $(".addCart").click(function(){
@@ -13,7 +42,7 @@ $(document).ready(function(){
       }).fail(function(data){
 	console.log("error");      
       });
-      alert(nombre_articulo+" ha sido agregado a tu carrito");
+      alert("\""+nombre_articulo+"\" ha sido agregado a tu carrito");
 
   });
 });
@@ -32,7 +61,7 @@ $(document).ready(function(){
       }).fail(function(data){
   console.log("error");      
       });
-      alert(nombre_articulo+" ha sido eliminado de tu carrito");
+      alert("\""+nombre_articulo+"\" ha sido eliminado de tu carrito");
      location.reload();
 
   });
