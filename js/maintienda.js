@@ -1,34 +1,54 @@
 //total
 $(document).ready(function(){
-  $(".totalXcomic").each(function(){
-     var total = $(".total").html();
-     total = total + $(this).html(); 
-    });
-  });
+	var total =0;
+ 
 
 //totalXcomic
-$(document).ready(function(){
-  $(".cantidad").change(function(){
-     var $precio= $(this).parent().siblings(".preciocom").children(".precio").html();
-     $(this).parent().siblings(".totalXcomic").children(".precioxcantidad") = $precio * $(this).html();
-    });
-  });
+
+$(".precioXcantidad").each(function(){ 
+	var cantidad = parseInt($(this).parent().siblings().children(".cantidad").html());
+	  var precio = parseInt($(this).parent().siblings().children(".precio").html());
+  $(this).html( cantidad * precio);	
+});
+  
 
 //aumentar cantidad de articulos
-$(document).ready(function(){
+
   $(".mas").click(function(){
-     $(this).siblings(".cantidad").html()+1;
+
+     var val = $(this).siblings(".cantidad").html();
+     $(this).siblings(".cantidad").html(parseInt(val)+1);
+    
+     var precio = parseInt($(this).parent().siblings(".preciocom").children(".precio").html());
+   var totali= precio * parseInt($(this).siblings(".cantidad").html());	  
+     $(this).parent().siblings(".totalXcomic").children().html(totali);
+	  total=0;
+  $(".precioXcantidad").each(function(){
+     var to = parseInt($(this).html());
+	  total = total + to;
+     $(".total").html(total);	
     });
-  });
+      });
+
 //disminuir cantidad de articulos
-$(document).ready(function(){
+
   $(".menos").click(function(){
-     $(this).siblings(".cantidad").html()-1;
+      var val = $(this).siblings(".cantidad").html();
+     $(this).siblings(".cantidad").html(parseInt(val)-1);
+     var precio = parseInt($(this).parent().siblings(".preciocom").children(".precio").html());
+   var totali= precio * parseInt($(this).siblings(".cantidad").html());	  
+	  total=0;
+     $(this).parent().siblings(".totalXcomic").children().html(totali);
+  $(".precioXcantidad").each(function(){
+     var to = parseInt($(this).html());
+	  total = total + to;
+     $(".total").html(total);	
     });
-  });
+    });
+
 
 //Agregar articulo al carrito
-$(document).ready(function(){
+
   $(".addCart").click(function(){
       var id_articulo = $(this).parent().attr("id");
       var nombre_articulo = $(this).parent().children().html();
@@ -45,12 +65,12 @@ $(document).ready(function(){
       alert("\""+nombre_articulo+"\" ha sido agregado a tu carrito");
 
   });
-});
+
 //Quitar articulo del carrito
-$(document).ready(function(){
+
   $(".elimCart").click(function(){
       var id_articulo = $(this).parent().attr("id");
-      var nombre_articulo = $(this).parent().children().html();
+      var nombre_articulo = $(this).parent().children().children().html();
       $.ajax({
         url:"quitar_articulo.php",
               method: 'post',   
@@ -65,8 +85,13 @@ $(document).ready(function(){
      location.reload();
 
   });
-});
+//calculo del total
 
+  $(".precioXcantidad").each(function(){
+     var to = parseInt($(this).html());
+	  total = total + to;
+     $(".total").html(total);	
+    });
 
 
 
@@ -469,3 +494,4 @@ var contador_carrusel_imagen = 0;
   }
   }while(i < total_carrusel_imagen);
 /*fin carrusel_imagen*/
+});
