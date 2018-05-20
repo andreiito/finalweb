@@ -24,7 +24,7 @@
 		echo "<p>En breve recibir&aacute; un correo a: ".$correo." con los detalles de su compra</p>";
 			mail($correo, 'Venta', 'Su compra se ha efectuado');
 
-			/*
+			
 			$query_id_us= "select id_usuario FROM usuarios where usuario= '".$_SESSION['usuario']."';";
 			$id_us = consulta($query_id_us);
 
@@ -51,7 +51,7 @@
 				$vxc = consulta($sql_vxc);
 				
 			}
-			*/
+			
 			
 
 

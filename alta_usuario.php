@@ -3,10 +3,10 @@ session_start();
 include "conexion.php";
 if(!$_SESSION['usuario']){
 	$usuario = $_POST['usuario']; 
-	$contrasena = $_POST['pass'];
+	$contrasena = md5($_POST['pass']);
 	$tipoUsuario = 3;
 	$nombre = $_POST['nombre'];
-	$apPaterno = $_POST['apat'];
+	$apPaterno = $_POST['appat'];
 	$apMaterno = $_POST['apmat'];
 	$correo = $_POST['correo'];
 	$calle = $_POST['calle'];
@@ -44,10 +44,10 @@ if(!$_SESSION['usuario']){
 if($_SESSION['tipo']=='admin'){
 		
 	$usuario = $_POST['usuario']; 
-	$contrasena = $_POST['pass'];
+	$contrasena = md5($_POST['pass']);
 	$tipoUsuario = (int) $_POST['tipo'];
 	$nombre = $_POST['nombre'];
-	$apPaterno = $_POST['apat'];
+	$apPaterno = $_POST['appat'];
 	$apMaterno = $_POST['apmat'];
 	$correo = $_POST['correo'];
 	$calle = $_POST['calle'];

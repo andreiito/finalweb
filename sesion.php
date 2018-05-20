@@ -2,7 +2,7 @@
 
 	session_start();
 	$usuario=$_POST['usuario'];
-	$pass=$_POST['password'];
+	$pass= md5($_POST['password']);
 
  $_SESSION["articulos"] = array();
 	$sqlval = "select * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$pass."'";
