@@ -23,11 +23,12 @@ $(".precioXcantidad").each(function(){
    var totali= precio * parseInt($(this).siblings(".cantidad").html());	  
      $(this).parent().siblings(".totalXcomic").children().html(totali);
 	  total=0;
-  $(".precioXcantidad").each(function(){
-     var to = parseInt($(this).html());
-	  total = total + to;
-     $(".total").html(total);	
-    });
+
+        $(".precioXcantidad").each(function(){
+           var to = parseInt($(this).html());
+      	  total = total + to;
+           $(".total").html(total);	
+          });
       });
 
 //disminuir cantidad de articulos
@@ -38,12 +39,14 @@ $(".precioXcantidad").each(function(){
      var precio = parseInt($(this).parent().siblings(".preciocom").children(".precio").html());
    var totali= precio * parseInt($(this).siblings(".cantidad").html());	  
 	  total=0;
+
+
      $(this).parent().siblings(".totalXcomic").children().html(totali);
-  $(".precioXcantidad").each(function(){
-     var to = parseInt($(this).html());
-	  total = total + to;
-     $(".total").html(total);	
-    });
+        $(".precioXcantidad").each(function(){
+        var to = parseInt($(this).html());
+	       total = total + to;
+        $(".total").html(total);	
+        });
     });
 
 
@@ -65,6 +68,7 @@ $(".precioXcantidad").each(function(){
       alert("\""+nombre_articulo+"\" ha sido agregado a tu carrito");
 
   });
+
 
 //Quitar articulo del carrito
 
@@ -93,7 +97,22 @@ $(".precioXcantidad").each(function(){
      $(".total").html(total);	
     });
 
-
+// boton comprar
+$(".comprar").click(function(){
+   //agregar cantidad al comic
+var id_articulo = $(this).parent().parent().attr("id");
+$.ajax({
+        url:"cantidad.php",
+              method: 'post',   
+        data: {"id_articulo": id_articulo,
+                "cantidad": cantidad}
+      }).done(function(data){
+      console.log(data);
+      
+      }).fail(function(data){
+  console.log("error");      
+      });
+});
 
 /*::::::::::::::::::::INICIO CODIGO FORMS::::::::::::::::*/
 $( ".checkboxjs" ).focusin(function() {

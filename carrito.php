@@ -9,11 +9,7 @@
 	<div class="pagina">
 		<br/> <br/>
 		<h1>Tu carrito</h1>
-		<div>
-		<form action="s.php" method="post" >
-				
-			<fieldset class="fieldset_form"> <legend class="legend_form"> Articulos del Carrito </legend> 
-				<div class="form_grupo">
+		
 		<?php
 			include "conexion.php";
 			
@@ -42,10 +38,8 @@
 
 ?>
 <br/>
-		<input type="submit" class="button" value="Comprar">
-		</fieldset>
-		</form>
-		</div>
+		<a class="comprar" href="s.php">Comprar</a>
+		
 	</div><!--fin pagina-->
 	<?php include "footer.php"; ?>
 </body>

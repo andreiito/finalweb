@@ -5,6 +5,7 @@
 	$pass= md5($_POST['password']);
 
  $_SESSION["articulos"] = array();
+ $_SESSION["compras"] = array(array());
 	$sqlval = "select * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$pass."'";
 	include "conexion.php";
 	$valUP = consulta($sqlval);
