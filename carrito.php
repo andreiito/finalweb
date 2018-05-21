@@ -38,7 +38,7 @@
 
 ?>
 <br/>
-		<a class="comprar" href="s.php">Comprar</a>
+		<a class="comprar" href="comprar.php">Comprar</a>
 		
 	</div><!--fin pagina-->
 	<?php include "footer.php"; ?>

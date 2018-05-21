@@ -41,15 +41,12 @@
 			$id_venta = consulta($sql_id_venta);
 
 			$id_venta= $id_venta[0]['id_venta'];
-			
-			foreach($_SESSION['articulos'] as $id) {
-				$sql = "select id_comic from comics where id_comic ='".$id."';";
-				$com = consulta($sql);
-				$com= $com[0]['id_comic'];
 
-				$sql_vxc="insert into ventaxcomics (id_venta, id_comic) values ('".$id_venta."','".$id_comic."');";
+			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
+				$id = $_SESSION['compras'][$i];
+				$cantidad =$_SESSION['compras'][$i+1];
+				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."',".$cantidad.");";
 				$vxc = consulta($sql_vxc);
-				
 			}
 			
 			
