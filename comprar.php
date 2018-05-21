@@ -18,41 +18,47 @@
 			//datos para venta
 			$id_us= $id_us[0]['id_usuario'];
 			$fecha = date("Y/m/d");
+						
 
-			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
-				$id = $_SESSION['compras'][$i];
-				$cantidad= int($_SESSION['compras'][$i+1]):
-				$sql_disp="select cantidad from comics where id_comic = '".$id."';";
-				$disp = consulta($sql_disp);
-				$disp = int($disp[0]['cantidad']);
-				if($disp > $cantidad){
-				 	echo "<p>No hay tantos articulos de un elemento de su carrito, por favor verifique su disponibilidad</p>"
+			for($i=0;$i< count($_SESSION['compras']); $i= $i+2){
+			//echo $_SESSION['compras'][$i];}
+			$id = $_SESSION['compras'][$i];
+			$cont =$i;	
+			$cantidad= $_SESSION['compras'][$cont+1];
+			
+			$sql_disp="select cantidad from comics where id_comic = '".$id."';";
+			$disp = consulta($sql_disp);
+			$disp = $disp[0]['cantidad'];
+			
+			
+			if($disp < $cantidad){
+				 	echo "<p>No hay tantos articulos de un elemento de su carrito, por favor verifique su disponibilidad</p>";
 				}
-				else{
+else{
+
 
 			//registro de la venta
 			$sql_venta ="insert into venta (fecha, id_usuario) values ('".$fecha."','".$id_us."');";
 			$venta= consulta($sql_venta);
 
 			//datos para ventaXComic
-			$sql_id_venta ="select id_venta form ventas where id_usuario='".$id_us-"' and fecha= '".$fecha."';";
+			$sql_id_venta ="select id_venta from venta where id_usuario='".$id_us."' and fecha= '".$fecha."';";
 			$id_venta = consulta($sql_id_venta);
 
 			$id_venta= $id_venta[0]['id_venta'];
-
-			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
-				$id = $_SESSION['compras'][$i];
-				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."',".$cantidad.");";
+			
+				
+				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."','".$cantidad."');";
 				$vxc = consulta($sql_vxc);
-
+				
 				$actual = $disp - $cantidad;
 
-				$sql_actcom="update comics set cantidad =".$actual." where id_comic='".$id.";";
+				$sql_actcom="update comics set cantidad =".$actual." where id_comic='".$id."';";
 				$actcom=consulta($sql_actcom);
 				echo "<p>Compra Realizada</p>";
-			}
+			
 
-		}
+}}
 
 			
 			
