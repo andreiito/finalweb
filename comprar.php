@@ -45,7 +45,7 @@
 			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
 				$id = $_SESSION['compras'][$i];
 				$cantidad =$_SESSION['compras'][$i+1];
-				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."',".$cantidad.");";
+				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."','".$cantidad."');";
 				$vxc = consulta($sql_vxc);
 			}
 			
