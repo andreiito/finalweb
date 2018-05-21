@@ -11,26 +11,24 @@
 		<h1>Gracias por su compra</h1>
 		
 <?php
-
-
-			include "conexion.php";
-			//mail
-			$query_correo= "select correo FROM usuarios where usuario= '".$_SESSION['usuario']."';";
-			$correo = consulta($query_correo);
-
-			//datos para venta
-			$correo= $correo[0]['correo'];
-			
-		echo "<p>En breve recibir&aacute; un correo a: ".$correo." con los detalles de su compra</p>";
-			mail($correo, 'Venta', 'Su compra se ha efectuado');
-
-			
-			$query_id_us= "select id_usuario FROM usuarios where usuario= '".$_SESSION['usuario']."';";
+	include "conexion.php";
+	$query_id_us= "select id_usuario FROM usuarios where usuario= '".$_SESSION['usuario']."';";
 			$id_us = consulta($query_id_us);
 
 			//datos para venta
 			$id_us= $id_us[0]['id_usuario'];
 			$fecha = date("Y/m/d");
+
+			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
+				$id = $_SESSION['compras'][$i];
+				$cantidad= int($_SESSION['compras'][$i+1]):
+				$sql_disp="select cantidad from comics where id_comic = '".$id."';";
+				$disp = consulta($sql_disp);
+				$disp = int($disp[0]['cantidad']);
+				if($disp > $cantidad){
+				 	echo "<p>No hay tantos articulos de un elemento de su carrito, por favor verifique su disponibilidad</p>"
+				}
+				else{
 
 			//registro de la venta
 			$sql_venta ="insert into venta (fecha, id_usuario) values ('".$fecha."','".$id_us."');";
@@ -44,10 +42,20 @@
 
 			for($i=1;$i<= count($_SESSION['compras']); $i= $i+2){
 				$id = $_SESSION['compras'][$i];
-				$cantidad =$_SESSION['compras'][$i+1];
-				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."','".$cantidad."');";
+				$sql_vxc="insert into ventaxcomics (id_venta, id_comic, cantidad) values ('".$id_venta."','".$id."',".$cantidad.");";
 				$vxc = consulta($sql_vxc);
+
+				$actual = $disp - $cantidad;
+
+				$sql_actcom="update comics set cantidad =".$actual." where id_comic='".$id.";";
+				$actcom=consulta($sql_actcom);
+				echo "<p>Compra Realizada</p>";
 			}
+
+		}
+
+			
+			
 			
 			
 
