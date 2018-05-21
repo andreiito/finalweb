@@ -155,7 +155,6 @@ CREATE TABLE comics (
     descripcion character varying(240) NOT NULL,
     id_editorial integer NOT NULL,
     id_descuento integer NOT NULL
-    
 );
 
 
@@ -486,7 +485,7 @@ ALTER SEQUENCE venta_id_venta_seq OWNED BY venta.id_venta;
 CREATE TABLE ventaxcomics (
     id_comic integer NOT NULL,
     id_venta integer NOT NULL,
-    pago integer NOT NULL
+    cantidad smallint NOT NULL
 );
 
 
@@ -684,8 +683,8 @@ SELECT pg_catalog.setval('autoresxcomics_id_comic_seq', 1, false);
 -- Data for Name: comics; Type: TABLE DATA; Schema: public; Owner: admintienda
 --
 
-INSERT INTO comics VALUES (2, 'Amazing spiderman', 4, 320, 'img_comics/spiderman.jpeg','Nueva aventura de spiderman #34', 1, 1);
-INSERT INTO comics VALUES (3, 'Civil War', 4, 400, 'img_comics/civil_war.jpeg','Todos los super heroes reunidos pero divididos', 1, 1);
+INSERT INTO comics VALUES (2, 'Amazing spiderman', 2, 320, 'img_comics/spiderman.jpeg', 'Nueva aventura de spiderman #34', 1, 1);
+INSERT INTO comics VALUES (3, 'Civil War', 3, 400, 'img_comics/civil_war.jpeg', 'Todos los super heroes reunidos pero divididos', 1, 1);
 
 
 --
@@ -736,15 +735,15 @@ SELECT pg_catalog.setval('descuento_id_descuento_seq', 10, true);
 -- Data for Name: direccion; Type: TABLE DATA; Schema: public; Owner: admintienda
 --
 
-INSERT INTO direccion VALUES (1, 'CDMX', 'Rancho', '106', '1', 'Campestre', 'Coyoacan', 4890, 1);
-INSERT INTO direccion VALUES (4, 'Mexico', 'Rancho', '106', '1', 'Campestre', 'Coyoacan', 4890, 7);
+INSERT INTO direccion VALUES (6, 'Mexico', 'Rancho', '106', '1', 'Campestre', 'Coyoacan', 4890, 9);
+INSERT INTO direccion VALUES (7, 'Mexico', 'Rancho', '106', '1', 'Campestre', 'Coyoacan', 4890, 10);
 
 
 --
 -- Name: direccion_id_direccion_seq; Type: SEQUENCE SET; Schema: public; Owner: admintienda
 --
 
-SELECT pg_catalog.setval('direccion_id_direccion_seq', 4, true);
+SELECT pg_catalog.setval('direccion_id_direccion_seq', 7, true);
 
 
 --
@@ -785,8 +784,9 @@ INSERT INTO tipousuario VALUES (3, 'cliente');
 -- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: admintienda
 --
 
-INSERT INTO usuarios VALUES (1, 'Andre', 'Ortiz', 'Loyola', '5589898989', 'andreortiz11@hotmail.com', 'andreiito', 'holamundo', 1);
-INSERT INTO usuarios VALUES (7, 'Max', '', 'Alamilla', '78980909', 'masxjncs@kjxba.com', 'matt', 'holamundo', 3);
+INSERT INTO usuarios VALUES (9, 'Andre', '', 'Loyola', '78980909', 'andreortiz11@hotmail.com', 'admin', '1c7a92ae351d4e21ebdfb897508f59d6', 1);
+INSERT INTO usuarios VALUES (10, 'Max', 'Meshoulam', 'Alamilla', '78980909', 'sasd@kjksj.com', 'matt', '1c7a92ae351d4e21ebdfb897508f59d6', 3);
+INSERT INTO usuarios VALUES (11, 'Luis', 'Ortiz', 'Loyola', '', 'asjabd@jkhs.com', 'luisolm', '1c7a92ae351d4e21ebdfb897508f59d6', 2);
 
 
 --
@@ -800,13 +800,15 @@ SELECT pg_catalog.setval('usuarios_id_tipo_seq', 1, false);
 -- Name: usuarios_id_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: admintienda
 --
 
-SELECT pg_catalog.setval('usuarios_id_usuario_seq', 7, true);
+SELECT pg_catalog.setval('usuarios_id_usuario_seq', 11, true);
 
 
 --
 -- Data for Name: venta; Type: TABLE DATA; Schema: public; Owner: admintienda
 --
 
+INSERT INTO venta VALUES (26, '2018-05-20', 10);
+INSERT INTO venta VALUES (27, '2018-05-20', 10);
 
 
 --
@@ -820,13 +822,15 @@ SELECT pg_catalog.setval('venta_id_usuario_seq', 1, false);
 -- Name: venta_id_venta_seq; Type: SEQUENCE SET; Schema: public; Owner: admintienda
 --
 
-SELECT pg_catalog.setval('venta_id_venta_seq', 1, false);
+SELECT pg_catalog.setval('venta_id_venta_seq', 27, true);
 
 
 --
 -- Data for Name: ventaxcomics; Type: TABLE DATA; Schema: public; Owner: admintienda
 --
 
+INSERT INTO ventaxcomics VALUES (2, 26, 2);
+INSERT INTO ventaxcomics VALUES (3, 26, 1);
 
 
 --
@@ -912,7 +916,7 @@ ALTER TABLE ONLY venta
 --
 
 ALTER TABLE ONLY autoresxcomics
-    ADD CONSTRAINT autoresxcomics_id_autor_fkey FOREIGN KEY (id_autor) REFERENCES autores(id_autor) on delete cascade on update cascade;
+    ADD CONSTRAINT autoresxcomics_id_autor_fkey FOREIGN KEY (id_autor) REFERENCES autores(id_autor) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -920,7 +924,7 @@ ALTER TABLE ONLY autoresxcomics
 --
 
 ALTER TABLE ONLY autoresxcomics
-    ADD CONSTRAINT autoresxcomics_id_comic_fkey FOREIGN KEY (id_comic) REFERENCES comics(id_comic) on delete cascade on update cascade;
+    ADD CONSTRAINT autoresxcomics_id_comic_fkey FOREIGN KEY (id_comic) REFERENCES comics(id_comic) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -928,7 +932,7 @@ ALTER TABLE ONLY autoresxcomics
 --
 
 ALTER TABLE ONLY comics
-    ADD CONSTRAINT comics_id_descuento_fkey FOREIGN KEY (id_descuento) REFERENCES descuento(id_descuento) on delete cascade on update cascade;
+    ADD CONSTRAINT comics_id_descuento_fkey FOREIGN KEY (id_descuento) REFERENCES descuento(id_descuento) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -936,7 +940,7 @@ ALTER TABLE ONLY comics
 --
 
 ALTER TABLE ONLY comics
-    ADD CONSTRAINT comics_id_editorial_fkey FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial) on delete cascade on update cascade;
+    ADD CONSTRAINT comics_id_editorial_fkey FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -944,7 +948,7 @@ ALTER TABLE ONLY comics
 --
 
 ALTER TABLE ONLY direccion
-    ADD CONSTRAINT direccion_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) on delete cascade on update cascade;
+    ADD CONSTRAINT direccion_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -952,7 +956,7 @@ ALTER TABLE ONLY direccion
 --
 
 ALTER TABLE ONLY direccion
-    ADD CONSTRAINT direccion_id_usuario_fkey1 FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE on update cascade;
+    ADD CONSTRAINT direccion_id_usuario_fkey1 FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -960,7 +964,7 @@ ALTER TABLE ONLY direccion
 --
 
 ALTER TABLE ONLY usuarios
-    ADD CONSTRAINT usuarios_id_tipo_fkey FOREIGN KEY (id_tipo) REFERENCES tipousuario(id_tipo) on delete cascade on update cascade;
+    ADD CONSTRAINT usuarios_id_tipo_fkey FOREIGN KEY (id_tipo) REFERENCES tipousuario(id_tipo) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -968,7 +972,7 @@ ALTER TABLE ONLY usuarios
 --
 
 ALTER TABLE ONLY venta
-    ADD CONSTRAINT venta_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) on delete cascade on update cascade;
+    ADD CONSTRAINT venta_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -976,7 +980,7 @@ ALTER TABLE ONLY venta
 --
 
 ALTER TABLE ONLY ventaxcomics
-    ADD CONSTRAINT ventaxcomics_id_comic_fkey FOREIGN KEY (id_comic) REFERENCES comics(id_comic) on delete cascade on update cascade;
+    ADD CONSTRAINT ventaxcomics_id_comic_fkey FOREIGN KEY (id_comic) REFERENCES comics(id_comic) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -984,7 +988,7 @@ ALTER TABLE ONLY ventaxcomics
 --
 
 ALTER TABLE ONLY ventaxcomics
-    ADD CONSTRAINT ventaxcomics_id_venta_fkey FOREIGN KEY (id_venta) REFERENCES venta(id_venta) on delete cascade on update cascade;
+    ADD CONSTRAINT ventaxcomics_id_venta_fkey FOREIGN KEY (id_venta) REFERENCES venta(id_venta) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
@@ -1027,7 +1031,7 @@ GRANT USAGE ON SEQUENCE autoresxcomics_id_comic_seq TO ventatienda;
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE comics TO ventatienda;
-GRANT SELECT ON TABLE comics TO clientetienda;
+GRANT SELECT,UPDATE ON TABLE comics TO clientetienda;
 
 
 --
