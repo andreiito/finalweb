@@ -7,19 +7,13 @@ session_start();
 //			echo "<h1>a</h1>";
 //}
 //include "conexion.php";
+var_dump ($_POST);
 //print_r ($_FILES);
 
 
 
-//echo "<br>";
-//var_dump ($_SESSION);
-$hola = array(array());
-
-array_push($hola, 0);
-array_push($hola[0], 1);
-var_dump ($hola);
-
-
+echo "<br>";
+var_dump ($_SESSION);
 
 
 /*include "conexion.php";
@@ -29,7 +23,7 @@ echo $edit[0]['id_editorial'];
 echo $edit[0]['nombre'];*/
 
 # definimos la carpeta destino
-//$carpetaDestino="img_comics/";
+$carpetaDestino="img_comics/";
 # si hay algun archivo que subir *
 #
 //echo $_FILES["imgcomic"]["tmp_name"];
