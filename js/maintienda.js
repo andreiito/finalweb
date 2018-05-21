@@ -100,10 +100,12 @@ $(".precioXcantidad").each(function(){
 // boton comprar
 $(".comprar").click(function(){
    //agregar cantidad al comic
-var id_articulo = $(this).parent().parent().attr("id");
+	$(".articulo").each(function(){
+		var id_articulo = $(this).attr("id");
+		var cantidad = $(this).children("p").children(".cantidad").html();
 $.ajax({
         url:"cantidad.php",
-              method: 'post',   
+        method: 'post',   
         data: {"id_articulo": id_articulo,
                 "cantidad": cantidad}
       }).done(function(data){
@@ -112,6 +114,8 @@ $.ajax({
       }).fail(function(data){
   console.log("error");      
       });
+	});
+
 });
 
 /*::::::::::::::::::::INICIO CODIGO FORMS::::::::::::::::*/

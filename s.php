@@ -11,11 +11,7 @@ session_start();
 //print_r ($_FILES);
 
 
-$hola = array(array());
-
-array_push($hola, 0);
-array_push($hola[0], 1);
-var_dump ($hola);
+var_dump ($_SESSION['compras']);
 //echo "<br>";
 //var_dump ($_SESSION);
 
