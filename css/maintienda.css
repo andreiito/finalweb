@@ -46,7 +46,7 @@ a{
     margin: auto;
 }
 .pagina{
-    
+    background: url("../img/fondo.jpeg");   
     margin: auto;
 }
 .fila:after, .fila:before{
@@ -59,8 +59,8 @@ a{
         word-wrap:  break-word;    
     }
 a:focus, a:hover {
-    color: #ff0000;
-    outline: #ff0000 dotted 3px;
+    color: white;
+    outline: white dotted 3px;
     text-decoration: underline;
     padding: 2px;
 }
@@ -233,7 +233,7 @@ h1{
     height: 50px;
     position:fixed;
     border-bottom: solid 2px;
-    background-color: #fff;
+    background-image: url("../img/header.jpg");
 }
 
 nav > .lista_menu{
@@ -1369,5 +1369,9 @@ nav > .lista_menu{
     padding: 2px;
 }
 .img_logo{
-    width: 20%;
+    width: 100%;
 }
+.nav_static, footer{
+
+    background: url("../img/header.jpg");
+    }

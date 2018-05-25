@@ -34,7 +34,7 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 		# movemos el archivo
                 if(move_uploaded_file($origen, $destino)){
                 	//insertar en tabla comics
-                	$scomic = "insert into comics (titulo, cantidad, precio, url, descripcion, id_editorial, id_descuento) values ('".$titulo."',".$cant.",".$precio.",'".$destino."','".$descri"','".$edit."',".$desc.")";	
+                	$scomic = "insert into comics (titulo, cantidad, precio, url, descripcion, id_editorial, id_descuento) values ('".$titulo."',".$cant.",".$precio.",'".$destino."','".$descri."','".$edit."',".$desc.");";	
 		$altacomic=consulta($scomic);
 					//insertar en tabla 
                     header("Location: index.php");

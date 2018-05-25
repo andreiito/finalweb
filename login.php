@@ -6,6 +6,7 @@
 	</head>
 	<body>
 	<?php include "header.php" ?>
+	<div class="pagina">
 		<br/> <br/>
 		<h1>Inicio de Sesi&oacute;n</h1>
 		<p>Por favor ingrese sus datos en el siguiente formulario.</p>
@@ -17,7 +18,7 @@
 		<input type="password" name="password" autocomplete="off">
 			<input type="submit" value="Enviar">
 	</form>
-	
+	</div>
 	<?php include "footer.php" ?>
 	</body>
 </html>
