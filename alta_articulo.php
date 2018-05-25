@@ -10,7 +10,7 @@ if($_SESSION['tipo']=='admin'|| $_SESSION['tipo']=='venta'){
 	$autor = $_POST['autor'];
 	$url = $_POST['url'];
 	$desc = $_POST['desc'];
-	$descri =$_POST['descripcion']
+	$descri =$_POST['descripcion'];
 	
 	
 	$sqlcomic="select titulo from comics WHERE titulo = '".$titulo."';";

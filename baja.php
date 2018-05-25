@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Eliminar mi cuenta</title>
+		<title>Tienda en linea/ Eliminar cuenta</title>
 	<?php include "meta.php" ?>
 	</head>
 	<body>

@@ -6,6 +6,7 @@
 </head>
 <body>
 	<?php include "header.php" ?>
+	<?php include "red_cliente.php" ?>
 	
 	<div class="pagina">
 		<form action="alta_articulo.php" method="post" enctype="multipart/form-data">

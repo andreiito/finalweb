@@ -1,6 +1,6 @@
 <header>
 	<nav class="nav_static nav_disp_block">
-		<a href="" class="nav_logo"><img src="img/carrito.jpg" class="img_logo" aria-label="carrito"></a>
+		<a href="" class="nav_logo"><img src="img/logo.png" class="img_logo" aria-label="carrito"></a>
 			<button class="boton_hamburguesa hamburguesa_derecha" aria-label="Desplegar men&uacute;" aria-expanded="false">
 		<span class="icono_boton"></span>
 		<span class="icono_boton"></span>
@@ -25,8 +25,8 @@
 
 					if($_SESSION['tipo']=='venta'){
 						echo "<li class=\"link\"><a href=\"registro_articulos.php\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"eliminar_articulo.php\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"modificar_articulo.php\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
 					}
 					if($_SESSION['tipo']=='admin'){
 						//Clientes
@@ -34,8 +34,8 @@
 						echo "<li class=\"link\"><a href=\"baja.php\" aria-label=\"Dar de baja a Usuario\">Eliminar Usuario </a></li>";
 						//Articulos
 						echo "<li class=\"link\"><a href=\"registro_articulos.php\" aria-label=\"Dar de Alta art&iacute;culo\">Agregar Art&iacute;culos</a></li>";
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
-						echo "<li class=\"link\"><a href=\"\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"eliminar_articulo.php\" aria-label=\"Dar de baja art&iacute;culo\">Eliminar Art&iacute;culos</a></li>";
+						echo "<li class=\"link\"><a href=\"modificar_articulo.php\" aria-label=\"Editar art&iacute;culo\">Modificar Art&iacute;culos</a></li>";
 
 					}
 	 	}
