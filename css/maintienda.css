@@ -1379,35 +1379,37 @@ ul, ol {
                 list-style:none;
             }
             
-            .nav > li {
+            nav > .lista_menu >.link {
                 float:left;
             }
             
-            .nav li a {
+            nav .lista_menu .link a {
                 text-decoration:none;
                 padding:10px 12px;
                 display:block;
             }
             
-            .nav li a:hover {
+            nav .lista_menu .link a:hover {
                 background-color:#f43;
             }
             
-            .nav li ul {
+            nav .lista_menu .link ul {
                 display:none;
                 position:absolute;
                 min-width:140px;
+    		background: url("../img/header.jpg");
+                
             }
             
-            .nav li:hover > ul {
+            nav .lista_menu .link:hover > ul {
                 display:block;
             }
             
-            .nav li ul li {
+            nav .lista_menu .link ul li {
                 position:relative;
             }
             
-            .nav li ul li ul {
+            nav .lista_menu .link ul li ul {
                 right:-140px;
                 top:0px;
             }
